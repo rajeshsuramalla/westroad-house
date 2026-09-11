@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>West Road House, Mancherial</title>
+<script src="lib/big.min.js"></script>
+<script src="lib/gl-matrix-min.js"></script>
+<script src="lib/jszip.min.js"></script>
+<script src="lib/core.min.js"></script>
+<script src="lib/geom.min.js"></script>
+<script src="lib/stroke.min.js"></script>
+<script src="lib/batik-svgpathparser.min.js"></script>
+<script src="lib/jsXmlSaxParser.min.js"></script>
+<script src="lib/triangulator.min.js"></script>
+<script src="lib/viewmodel.min.js"></script>
+<script src="lib/viewhome.min.js"></script>
+<style>
+  :root { --bg:#f4f1ec; --ink:#222; --accent:#2b2b2b; --wood:#8b5a2b; }
+  body { margin:0; font-family: Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:18px 20px 10px; }
+  h1 { margin:0; font-size:1.5rem; }
+  header p { margin:4px 0 0; color:#555; }
+  .tabs { display:flex; gap:8px; padding:0 20px 10px; flex-wrap:wrap; }
+  .tabs button { border:1px solid var(--accent); background:#fff; color:var(--accent); padding:8px 14px; border-radius:20px; cursor:pointer; font-size:0.95rem; }
+  .tabs button.on { background:var(--accent); color:#fff; }
+  .viewer { position:relative; margin:0 20px; }
+  canvas.viewerComponent { width:100%; height:70vh; background:#cfd6dc; border-radius:10px; outline:none; display:block; touch-action:none; }
+  .progress { position:absolute; top:40%; left:50%; transform:translate(-50%,-50%); background:rgba(40,40,40,.8); color:#fff; padding:14px 20px; border-radius:12px; text-align:center; }
+  .progress progress { width:220px; display:block; margin-bottom:6px; }
+  .controls { display:flex; gap:10px; flex-wrap:wrap; align-items:center; padding:10px 20px; font-size:0.95rem; }
+  .controls select { padding:6px; }
+  .controls[hidden], .viewer[hidden] { display:none; }
+  .hint { color:#666; font-size:0.85rem; padding:0 20px 10px; }
+  section { padding:10px 20px 30px; }
+  h2 { font-size:1.15rem; margin:20px 0 8px; }
+  video { width:100%; max-width:960px; border-radius:10px; background:#000; }
+  footer { padding:16px 20px 30px; color:#777; font-size:0.8rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>West Road House, Mancherial</h1>
+  <p>G+1 with car parking, terrace rooms. 3D model, walk around it with the mouse or your finger.</p>
+</header>
+
+<div class="tabs">
+  <button id="tab-rental" class="on" onclick="show('rental')">Rental G+1 plan</button>
+  <button id="tab-duplex" onclick="show('duplex')">Duplex plan</button>
+</div>
+
+<div class="viewer" id="view-rental">
+  <canvas id="canvas-rental" class="viewerComponent" tabindex="1"></canvas>
+  <div class="progress" id="prog-rental"><progress id="bar-rental" value="0" max="200"></progress><span id="label-rental">Loading</span></div>
+</div>
+<div class="controls" id="ctl-rental">
+  <label><input type="radio" id="aerial-rental" name="cam-rental" class="viewerComponent"> Aerial view</label>
+  <label><input type="radio" id="visit-rental" name="cam-rental" class="viewerComponent"> Virtual visit</label>
+  <select id="levels-rental" class="viewerComponent"></select>
+</div>
+
+<div class="viewer" id="view-duplex" hidden>
+  <canvas id="canvas-duplex" class="viewerComponent" tabindex="1"></canvas>
+  <div class="progress" id="prog-duplex"><progress id="bar-duplex" value="0" max="200"></progress><span id="label-duplex">Loading</span></div>
+</div>
+<div class="controls" id="ctl-duplex" hidden>
+  <label><input type="radio" id="aerial-duplex" name="cam-duplex" class="viewerComponent"> Aerial view</label>
+  <label><input type="radio" id="visit-duplex" name="cam-duplex" class="viewerComponent"> Virtual visit</label>
+  <select id="levels-duplex" class="viewerComponent"></select>
+</div>
+<p class="hint">Drag to rotate, wheel or pinch to zoom. In virtual visit use arrow keys or drag to walk. Pick a floor or a saved viewpoint from the list. Space bar switches aerial view and virtual visit.</p>
+
+<section>
+  <h2>Walkthrough video, duplex plan</h2>
+  <video controls preload="metadata" src="Rajesh_WestRoad_Duplex_walkthrough.mp4"></video>
+</section>
+
+<footer>Built with Sweet Home 3D and its HTML5 viewer (GNU GPL). Plans by the owner with Galaxy Architecture, Mancherial.</footer>
+
+<script>
+  var loaded = {};
+  var VERSION = "20260911d";
+  var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
+
+  function fitCanvas(id) {
+    var c = document.getElementById(id);
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(c.clientWidth * r);
+    c.height = Math.round(c.clientHeight * r);
+  }
+
+  function load(key) {
+    if (loaded[key]) return;
+    loaded[key] = true;
+    fitCanvas("canvas-" + key);
+    var onerror = function (err) {
+      window.__errs = (window.__errs || []).concat([String(err) + " | " + (err && err.message) + " | " + (err && err.stack)]);
+      document.getElementById("label-" + key).textContent = "Could not load the 3D model: " + (err.message || err);
+    };
+    var onprogression = function (part, info, percentage) {
+      window.__prog = (window.__prog || []).concat([part + "|" + info + "|" + percentage]);
+      var bar = document.getElementById("bar-" + key);
+      if (part === HomeRecorder.READING_HOME) {
+        bar.value = percentage * 100;
+        info = "reading plan";
+      } else if (part === Node3D.READING_MODEL) {
+        bar.value = 100 + percentage * 100;
+        info = "loading furniture";
+        if (percentage === 1) document.getElementById("prog-" + key).hidden = true;
+      }
+      document.getElementById("label-" + key).textContent = (percentage ? Math.floor(percentage * 100) + "% " : "") + info;
+    };
+    viewHome("canvas-" + key, homes[key] + "?v=" + VERSION, onerror, onprogression, {
+      roundsPerMinute: 0,
+      navigationPanel: "default",
+      aerialViewButtonId: "aerial-" + key,
+      virtualVisitButtonId: "visit-" + key,
+      levelsAndCamerasListId: "levels-" + key,
+      activateCameraSwitchKey: true
+    });
+  }
+
+  function show(key) {
+    ["rental", "duplex"].forEach(function (k) {
+      var on = k === key;
+      document.getElementById("view-" + k).hidden = !on;
+      document.getElementById("ctl-" + k).hidden = !on;
+      document.getElementById("tab-" + k).classList.toggle("on", on);
+    });
+    load(key);
+  }
+
+  window.addEventListener("resize", function () { Object.keys(loaded).forEach(function (k) { fitCanvas("canvas-" + k); }); });
+  show("rental");
+</script>
+</body>
+</html>
