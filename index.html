@@ -35,6 +35,11 @@
   section { padding:10px 20px 30px; }
   h2 { font-size:1.15rem; margin:20px 0 8px; }
   video { width:100%; max-width:960px; border-radius:10px; background:#000; }
+  .plans { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; max-width:1200px; }
+  .plans figure { margin:0; background:#fff; border-radius:10px; padding:8px; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+  .plans img { width:100%; height:auto; display:block; }
+  .plans figcaption { text-align:center; font-weight:600; padding:6px 0 2px; }
+  .plans[hidden] { display:none; }
   footer { padding:16px 20px 30px; color:#777; font-size:0.8rem; }
 </style>
 </head>
@@ -71,6 +76,21 @@
 <p class="hint">Drag to rotate, wheel or pinch to zoom. In virtual visit use arrow keys or drag to walk. Pick a floor or a saved viewpoint from the list. Space bar switches aerial view and virtual visit.</p>
 
 <section>
+  <h2>Floor plans</h2>
+  <p class="hint" style="padding:0 0 8px">Walls, doors, windows and room sizes from the same model. North is left, West Road is at the bottom. Tap a plan to open it full size.</p>
+  <div class="plans" id="plans-rental">
+    <figure><a href="plans/Rajesh_WestRoad_G+1_plan_gf.png" target="_blank"><img src="plans/Rajesh_WestRoad_G+1_plan_gf.png" alt="Ground floor plan" loading="lazy"></a><figcaption>Ground floor</figcaption></figure>
+    <figure><a href="plans/Rajesh_WestRoad_G+1_plan_ff.png" target="_blank"><img src="plans/Rajesh_WestRoad_G+1_plan_ff.png" alt="First floor plan" loading="lazy"></a><figcaption>First floor</figcaption></figure>
+    <figure><a href="plans/Rajesh_WestRoad_G+1_plan_tr.png" target="_blank"><img src="plans/Rajesh_WestRoad_G+1_plan_tr.png" alt="Terrace plan" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
+  </div>
+  <div class="plans" id="plans-duplex" hidden>
+    <figure><a href="plans/Rajesh_WestRoad_Duplex_plan_gf.png" target="_blank"><img src="plans/Rajesh_WestRoad_Duplex_plan_gf.png" alt="Duplex ground floor plan" loading="lazy"></a><figcaption>Ground floor</figcaption></figure>
+    <figure><a href="plans/Rajesh_WestRoad_Duplex_plan_ff.png" target="_blank"><img src="plans/Rajesh_WestRoad_Duplex_plan_ff.png" alt="Duplex first floor plan" loading="lazy"></a><figcaption>First floor</figcaption></figure>
+    <figure><a href="plans/Rajesh_WestRoad_Duplex_plan_tr.png" target="_blank"><img src="plans/Rajesh_WestRoad_Duplex_plan_tr.png" alt="Duplex terrace plan" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
+  </div>
+</section>
+
+<section>
   <h2>Walkthrough video, rental G+1 plan (HD)</h2>
   <p class="hint" style="padding:0 0 8px">Aerial view of the whole house, the approach from West Road, then a walk through the ground floor and the first floor.</p>
   <video controls preload="metadata" playsinline src="Rajesh_WestRoad_G+1_walkthrough.mp4"></video>
@@ -80,7 +100,7 @@
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20260913d";
+  var VERSION = "20260913e";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
@@ -128,6 +148,7 @@
       document.getElementById("view-" + k).hidden = !on;
       document.getElementById("ctl-" + k).hidden = !on;
       document.getElementById("tab-" + k).classList.toggle("on", on);
+      document.getElementById("plans-" + k).hidden = !on;
     });
     load(key);
     setTimeout(refit, 50);                        // a tab that was hidden had no size when it loaded
