@@ -86,6 +86,17 @@
   </div>
 </section>
 
+<section id="sec-elev-duplex" hidden>
+  <h2>Elevation</h2>
+  <p class="hint" style="padding:0 0 8px">Same design language as the rental plan: white boxes, charcoal fluted south bay with an LED line, louver fin, CNC jali, glass rails, white portal and pergola on the terrace.</p>
+  <div class="plans">
+    <figure><a href="elevations/duplex_elevation_front.jpg" target="_blank"><img src="elevations/duplex_elevation_front.jpg" alt="Duplex front elevation" loading="lazy"></a><figcaption>Front, from West Road</figcaption></figure>
+    <figure><a href="elevations/duplex_elevation_corner.jpg" target="_blank"><img src="elevations/duplex_elevation_corner.jpg" alt="Duplex north-west corner" loading="lazy"></a><figcaption>North-west corner</figcaption></figure>
+    <figure><a href="elevations/duplex_elevation_balcony.jpg" target="_blank"><img src="elevations/duplex_elevation_balcony.jpg" alt="Duplex balcony" loading="lazy"></a><figcaption>Balcony</figcaption></figure>
+    <figure><a href="elevations/duplex_elevation_terrace.jpg" target="_blank"><img src="elevations/duplex_elevation_terrace.jpg" alt="Duplex terrace" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
+  </div>
+</section>
+
 <section>
   <h2>Floor plans</h2>
   <p class="hint" style="padding:0 0 8px">Walls, doors, windows and room sizes from the same model. North is left, West Road is at the bottom. Tap a plan to open it full size.</p>
@@ -111,7 +122,7 @@
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20260913f";
+  var VERSION = "20260913g";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
@@ -161,6 +172,7 @@
       document.getElementById("tab-" + k).classList.toggle("on", on);
       document.getElementById("plans-" + k).hidden = !on;
       document.getElementById("sec-elev").hidden = (key !== "rental");
+      document.getElementById("sec-elev-duplex").hidden = (key !== "duplex");
     });
     load(key);
     setTimeout(refit, 50);                        // a tab that was hidden had no size when it loaded
