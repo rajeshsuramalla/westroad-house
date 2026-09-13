@@ -39,7 +39,7 @@
   .plans figure { margin:0; background:#fff; border-radius:10px; padding:8px; box-shadow:0 1px 4px rgba(0,0,0,.08); }
   .plans img { width:100%; height:auto; display:block; }
   .plans figcaption { text-align:center; font-weight:600; padding:6px 0 2px; }
-  .plans[hidden] { display:none; }
+  .plans[hidden], section[hidden] { display:none; }
   footer { padding:16px 20px 30px; color:#777; font-size:0.8rem; }
 </style>
 </head>
@@ -75,6 +75,17 @@
 </div>
 <p class="hint">Drag to rotate, wheel or pinch to zoom. In virtual visit use arrow keys or drag to walk. Pick a floor or a saved viewpoint from the list. Space bar switches aerial view and virtual visit.</p>
 
+<section id="sec-elev">
+  <h2>Elevation</h2>
+  <p class="hint" style="padding:0 0 8px">Front from West Road, the north-west corner, the balcony and the terrace. White boxes, charcoal fluted stair tower with LED lines, CNC jali, glass rails, white pergola.</p>
+  <div class="plans">
+    <figure><a href="elevations/elevation_front.jpg" target="_blank"><img src="elevations/elevation_front.jpg" alt="Front elevation from the road" loading="lazy"></a><figcaption>Front, from West Road</figcaption></figure>
+    <figure><a href="elevations/elevation_corner.jpg" target="_blank"><img src="elevations/elevation_corner.jpg" alt="North-west corner view" loading="lazy"></a><figcaption>North-west corner</figcaption></figure>
+    <figure><a href="elevations/elevation_balcony.jpg" target="_blank"><img src="elevations/elevation_balcony.jpg" alt="Balcony close view" loading="lazy"></a><figcaption>Balcony</figcaption></figure>
+    <figure><a href="elevations/elevation_terrace.jpg" target="_blank"><img src="elevations/elevation_terrace.jpg" alt="Terrace from above" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
+  </div>
+</section>
+
 <section>
   <h2>Floor plans</h2>
   <p class="hint" style="padding:0 0 8px">Walls, doors, windows and room sizes from the same model. North is left, West Road is at the bottom. Tap a plan to open it full size.</p>
@@ -100,7 +111,7 @@
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20260913e";
+  var VERSION = "20260913f";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
@@ -149,6 +160,7 @@
       document.getElementById("ctl-" + k).hidden = !on;
       document.getElementById("tab-" + k).classList.toggle("on", on);
       document.getElementById("plans-" + k).hidden = !on;
+      document.getElementById("sec-elev").hidden = (key !== "rental");
     });
     load(key);
     setTimeout(refit, 50);                        // a tab that was hidden had no size when it loaded
