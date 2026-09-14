@@ -50,7 +50,8 @@
 </header>
 
 <div class="tabs">
-  <button id="tab-rental" class="on" onclick="show('rental')">Rental G+1 plan</button>
+  <button id="tab-rental" class="on" onclick="show('rental')">G+1 plan</button>
+  <button id="tab-open" onclick="show('open')">G+1, open terrace</button>
   <button id="tab-duplex" onclick="show('duplex')">Duplex plan</button>
 </div>
 
@@ -62,6 +63,16 @@
   <label><input type="radio" id="aerial-rental" name="cam-rental" class="viewerComponent"> Aerial view</label>
   <label><input type="radio" id="visit-rental" name="cam-rental" class="viewerComponent"> Virtual visit</label>
   <select id="levels-rental" class="viewerComponent"></select>
+</div>
+
+<div class="viewer" id="view-open" hidden>
+  <canvas id="canvas-open" class="viewerComponent" tabindex="1"></canvas>
+  <div class="progress" id="prog-open"><progress id="bar-open" value="0" max="200"></progress><span id="label-open">Loading</span></div>
+</div>
+<div class="controls" id="ctl-open" hidden>
+  <label><input type="radio" id="aerial-open" name="cam-open" class="viewerComponent"> Aerial view</label>
+  <label><input type="radio" id="visit-open" name="cam-open" class="viewerComponent"> Virtual visit</label>
+  <select id="levels-open" class="viewerComponent"></select>
 </div>
 
 <div class="viewer" id="view-duplex" hidden>
@@ -86,9 +97,19 @@
   </div>
 </section>
 
+<section id="sec-elev-open" hidden>
+  <h2>Elevation</h2>
+  <p class="hint" style="padding:0 0 8px">Same G+1 plan without the terrace rooms: open terrace with a 3' parapet, mumty over the stair, tank on the mumty. Same facade below.</p>
+  <div class="plans">
+    <figure><a href="elevations/open_elevation_front.jpg" target="_blank"><img src="elevations/open_elevation_front.jpg" alt="Front elevation, open terrace" loading="lazy"></a><figcaption>Front, from West Road</figcaption></figure>
+    <figure><a href="elevations/open_elevation_corner.jpg" target="_blank"><img src="elevations/open_elevation_corner.jpg" alt="North-west corner, open terrace" loading="lazy"></a><figcaption>North-west corner</figcaption></figure>
+    <figure><a href="elevations/open_elevation_terrace.jpg" target="_blank"><img src="elevations/open_elevation_terrace.jpg" alt="Open terrace from above" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
+  </div>
+</section>
+
 <section id="sec-elev-duplex" hidden>
   <h2>Elevation</h2>
-  <p class="hint" style="padding:0 0 8px">Same design language as the rental plan: white boxes, charcoal fluted south bay with an LED line, louver fin, CNC jali, glass rails, white portal and pergola on the terrace.</p>
+  <p class="hint" style="padding:0 0 8px">Same design language as the G+1 plan: white boxes, charcoal fluted south bay with an LED line, louver fin, CNC jali, glass rails, white portal and pergola on the terrace.</p>
   <div class="plans">
     <figure><a href="elevations/duplex_elevation_front.jpg" target="_blank"><img src="elevations/duplex_elevation_front.jpg" alt="Duplex front elevation" loading="lazy"></a><figcaption>Front, from West Road</figcaption></figure>
     <figure><a href="elevations/duplex_elevation_corner.jpg" target="_blank"><img src="elevations/duplex_elevation_corner.jpg" alt="Duplex north-west corner" loading="lazy"></a><figcaption>North-west corner</figcaption></figure>
@@ -105,6 +126,11 @@
     <figure><a href="plans/Rajesh_WestRoad_G+1_plan_ff.png" target="_blank"><img src="plans/Rajesh_WestRoad_G+1_plan_ff.png" alt="First floor plan" loading="lazy"></a><figcaption>First floor</figcaption></figure>
     <figure><a href="plans/Rajesh_WestRoad_G+1_plan_tr.png" target="_blank"><img src="plans/Rajesh_WestRoad_G+1_plan_tr.png" alt="Terrace plan" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
   </div>
+  <div class="plans" id="plans-open" hidden>
+    <figure><a href="plans/Rajesh_WestRoad_G+1_open_terrace_plan_gf.png" target="_blank"><img src="plans/Rajesh_WestRoad_G+1_open_terrace_plan_gf.png" alt="Ground floor plan" loading="lazy"></a><figcaption>Ground floor</figcaption></figure>
+    <figure><a href="plans/Rajesh_WestRoad_G+1_open_terrace_plan_ff.png" target="_blank"><img src="plans/Rajesh_WestRoad_G+1_open_terrace_plan_ff.png" alt="First floor plan" loading="lazy"></a><figcaption>First floor</figcaption></figure>
+    <figure><a href="plans/Rajesh_WestRoad_G+1_open_terrace_plan_tr.png" target="_blank"><img src="plans/Rajesh_WestRoad_G+1_open_terrace_plan_tr.png" alt="Open terrace plan" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
+  </div>
   <div class="plans" id="plans-duplex" hidden>
     <figure><a href="plans/Rajesh_WestRoad_Duplex_plan_gf.png" target="_blank"><img src="plans/Rajesh_WestRoad_Duplex_plan_gf.png" alt="Duplex ground floor plan" loading="lazy"></a><figcaption>Ground floor</figcaption></figure>
     <figure><a href="plans/Rajesh_WestRoad_Duplex_plan_ff.png" target="_blank"><img src="plans/Rajesh_WestRoad_Duplex_plan_ff.png" alt="Duplex first floor plan" loading="lazy"></a><figcaption>First floor</figcaption></figure>
@@ -113,7 +139,7 @@
 </section>
 
 <section>
-  <h2>Walkthrough video, rental G+1 plan (HD)</h2>
+  <h2>Walkthrough video, G+1 plan (HD)</h2>
   <p class="hint" style="padding:0 0 8px">Aerial view of the whole house, the approach from West Road, then a walk through the ground floor and the first floor.</p>
   <video controls preload="metadata" playsinline src="Rajesh_WestRoad_G+1_walkthrough.mp4"></video>
 </section>
@@ -122,8 +148,8 @@
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20260913j";
-  var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
+  var VERSION = "20260913k";
+  var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", open: "Rajesh_WestRoad_G+1_open_terrace.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
     var c = document.getElementById(id);
@@ -165,7 +191,7 @@
   }
 
   function show(key) {
-    ["rental", "duplex"].forEach(function (k) {
+    ["rental", "open", "duplex"].forEach(function (k) {
       var on = k === key;
       document.getElementById("view-" + k).hidden = !on;
       document.getElementById("ctl-" + k).hidden = !on;
@@ -173,6 +199,7 @@
       document.getElementById("plans-" + k).hidden = !on;
       document.getElementById("sec-elev").hidden = (key !== "rental");
       document.getElementById("sec-elev-duplex").hidden = (key !== "duplex");
+      document.getElementById("sec-elev-open").hidden = (key !== "open");
     });
     load(key);
     setTimeout(refit, 50);                        // a tab that was hidden had no size when it loaded
