@@ -53,6 +53,7 @@
   <button id="tab-rental" class="on" onclick="show('rental')">G+1 plan</button>
   <button id="tab-open" onclick="show('open')">G+1, open terrace</button>
   <button id="tab-duplex" onclick="show('duplex')">Duplex plan</button>
+  <button id="tab-blender" onclick="show('blender')">Realistic renders</button>
 </div>
 
 <div class="viewer" id="view-rental">
@@ -84,7 +85,7 @@
   <label><input type="radio" id="visit-duplex" name="cam-duplex" class="viewerComponent"> Virtual visit</label>
   <select id="levels-duplex" class="viewerComponent"></select>
 </div>
-<p class="hint">Drag to rotate, wheel or pinch to zoom. In virtual visit use arrow keys or drag to walk. Pick a floor or a saved viewpoint from the list. Space bar switches aerial view and virtual visit.</p>
+<p class="hint" id="hint-3d">Drag to rotate, wheel or pinch to zoom. In virtual visit use arrow keys or drag to walk. Pick a floor or a saved viewpoint from the list. Space bar switches aerial view and virtual visit.</p>
 
 <section id="sec-elev">
   <h2>Elevation</h2>
@@ -118,7 +119,18 @@
   </div>
 </section>
 
-<section>
+<section id="sec-blender" hidden>
+  <h2>Realistic renders, G+1 plan</h2>
+  <p class="hint" style="padding:0 0 8px">Rendered in Blender (Cycles) from the same model: light stone cladding on the stair tower, teak fins and gate, real glass, LED lines, afternoon sun from the south-west and a dusk view with the lights on. Tap a picture to open it full size.</p>
+  <div class="plans">
+    <figure><a href="blender/Rajesh_WestRoad_G+1_front.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_front.jpg" alt="Realistic front view from West Road" loading="lazy"></a><figcaption>Front, from West Road</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+1_corner.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_corner.jpg" alt="Realistic corner view" loading="lazy"></a><figcaption>Corner view</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+1_entrance.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_entrance.jpg" alt="Parking and entrance close view" loading="lazy"></a><figcaption>Parking and entrance</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+1_dusk.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_dusk.jpg" alt="Dusk view with the lights on" loading="lazy"></a><figcaption>Dusk, lights on</figcaption></figure>
+  </div>
+</section>
+
+<section id="sec-plans">
   <h2>Floor plans</h2>
   <p class="hint" style="padding:0 0 8px">Walls, doors, windows and room sizes from the same model. North is left, West Road is at the bottom. Tap a plan to open it full size.</p>
   <div class="plans" id="plans-rental">
@@ -148,7 +160,7 @@
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20260918b";
+  var VERSION = "20261005a";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", open: "Rajesh_WestRoad_G+1_open_terrace.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
@@ -191,6 +203,14 @@
   }
 
   function show(key) {
+    var renders = key === "blender";
+    document.getElementById("tab-blender").classList.toggle("on", renders);
+    document.getElementById("sec-blender").hidden = !renders;
+    document.getElementById("sec-plans").hidden = renders;
+    document.getElementById("hint-3d").hidden = renders;
+    document.querySelectorAll('img[src*="navigationPanel"]').forEach(function (i) {   // viewer arrow pads float at the page top once their canvas is hidden
+      i.parentElement.style.visibility = renders ? "hidden" : "";
+    });
     ["rental", "open", "duplex"].forEach(function (k) {
       var on = k === key;
       document.getElementById("view-" + k).hidden = !on;
@@ -201,6 +221,7 @@
       document.getElementById("sec-elev-duplex").hidden = (key !== "duplex");
       document.getElementById("sec-elev-open").hidden = (key !== "open");
     });
+    if (renders) return;
     load(key);
     setTimeout(refit, 50);                        // a tab that was hidden had no size when it loaded
   }
