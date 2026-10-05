@@ -120,6 +120,20 @@
 </section>
 
 <section id="sec-blender" hidden>
+  <h2>3D model (Blender)</h2>
+  <p class="hint" style="padding:0 0 8px">Drag to rotate, wheel or pinch to zoom, right-drag or two fingers to move. Pick a floor to see it with the floors above and the ceiling taken off.</p>
+  <div class="viewer" id="b3d-wrap" style="position:relative">
+    <canvas id="b3d" style="width:100%;height:100%;display:block;touch-action:none"></canvas>
+    <div class="progress" id="b3d-prog"><span id="b3d-label">Loading 3D model</span></div>
+  </div>
+  <div class="controls" id="b3d-floors">
+    <button data-floor="9" class="on">Whole house</button>
+    <button data-floor="0">Ground floor</button>
+    <button data-floor="1">First floor</button>
+    <button data-floor="2">Terrace</button>
+    <button data-reset>Reset view</button>
+  </div>
+
   <!-- BLENDER VIDEO -->
   <h2>Exterior</h2>
   <p class="hint" style="padding:0 0 8px">Rendered in Blender (Cycles) from the same model: light stone cladding on the stair tower, teak fins and gate, real glass, LED lines, afternoon sun from the south-west. Tap a picture to open it full size.</p>
@@ -178,11 +192,109 @@
   <video controls preload="metadata" playsinline src="Rajesh_WestRoad_G+1_walkthrough.mp4"></video>
 </section>
 
+<style>
+  #b3d-floors button { border:1px solid var(--accent); background:#fff; color:var(--accent); padding:6px 12px; border-radius:16px; cursor:pointer; }
+  #b3d-floors button.on { background:var(--accent); color:#fff; }
+</style>
+<script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+                 "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/" } }
+</script>
+<script type="module">
+  import * as THREE from "three";
+  import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+  import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+  import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
+  import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+
+  let started = false;
+  window.startBlender3D = function () {
+    if (started) { resize(); return; }
+    started = true;
+    const canvas = document.getElementById("b3d"), wrap = document.getElementById("b3d-wrap");
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.AgXToneMapping; renderer.toneMappingExposure = 1.1;
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xcfe0ef);
+    scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+    scene.environmentIntensity = 0.6;
+    scene.add(new THREE.HemisphereLight(0xdde8ff, 0x6b7a52, 0.8));
+    const sun = new THREE.DirectionalLight(0xfff1dd, 2.6);
+    sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0004;
+    scene.add(sun, sun.target);
+    const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 2000);
+    const controls = new OrbitControls(camera, canvas);
+    controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.495;
+
+    window.resize = resize;
+    function resize() {
+      const w = wrap.clientWidth, h = wrap.clientHeight;
+      if (!w || !h) return;
+      renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+    }
+    window.addEventListener("resize", resize);
+
+    const draco = new DRACOLoader().setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.7/");
+    const loader = new GLTFLoader().setDRACOLoader(draco);
+    const label = document.getElementById("b3d-label");
+    let levels = {}, floorY = {}, centre = new THREE.Vector3(), radius = 10, current = 9;
+    loader.load("blender/Rajesh_WestRoad_G+1.glb?v=" + (window.VERSION || ""), gltf => {
+      const root = gltf.scene; scene.add(root);
+      const box = new THREE.Box3();
+      root.traverse(o => {
+        if (o.isMesh) {
+          o.castShadow = o.receiveShadow = true;
+          if (!/^Site/.test(o.parent && o.parent.name || o.name)) box.expandByObject(o);
+        }
+      });
+      root.children.forEach(o => {
+        levels[o.name] = o;
+        const m = o.name.match(/^Level_(\d+)$/);
+        if (m) floorY[+m[1]] = new THREE.Box3().setFromObject(o).min.y;
+      });
+      const c = box.getCenter(new THREE.Vector3()), size = box.getSize(new THREE.Vector3());
+      const r = size.length();
+      centre.copy(c); radius = r;
+      sun.position.set(c.x - r * 0.6, c.y + r * 1.5, c.z + r * 0.9); sun.target.position.copy(c);
+      const sc = sun.shadow.camera; sc.left = sc.bottom = -r; sc.right = sc.top = r; sc.near = 0.1; sc.far = r * 5; sc.updateProjectionMatrix();
+      controls.maxDistance = r * 4;
+      resetView();
+      document.getElementById("b3d-prog").hidden = true;
+    }, e => { if (e.total) label.textContent = "Loading 3D model " + Math.round(100 * e.loaded / e.total) + "%"; },
+       err => { label.textContent = "Could not load the 3D model"; console.error(err); });
+
+    function resetView() {                         // whole house: aerial from the road-side corner; a floor: closer and from higher up
+      const whole = current >= 9;
+      const t = whole ? centre.clone() : new THREE.Vector3(centre.x, (floorY[current] || 0) + 1.2, centre.z);
+      const dir = whole ? new THREE.Vector3(0.75, 0.6, 1.0) : new THREE.Vector3(0.25, 1.0, 0.55);
+      camera.position.copy(t).addScaledVector(dir.normalize(), radius * (whole ? 1.5 : 0.95));
+      controls.target.copy(t); controls.update();
+    }
+    function showFloor(f) {
+      Object.entries(levels).forEach(([name, o]) => {
+        const m = name.match(/^Level_(\d+)(_ceilings)?/);
+        if (!m) return;
+        const lv = +m[1];
+        o.visible = f >= 9 || (lv < f) || (lv === f && !m[2]);
+      });
+    }
+    document.querySelectorAll("#b3d-floors button").forEach(b => b.addEventListener("click", () => {
+      if (b.hasAttribute("data-reset")) { resetView(); return; }
+      document.querySelectorAll("#b3d-floors button[data-floor]").forEach(x => x.classList.toggle("on", x === b));
+      current = +b.dataset.floor; showFloor(current); resetView();
+    }));
+    resize();
+    renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); });
+  };
+</script>
+
 <footer>Built with Sweet Home 3D and its HTML5 viewer (GNU GPL). Plans by the owner with Galaxy Architecture, Mancherial.</footer>
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20261005b";
+  var VERSION = "20261005c";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", open: "Rajesh_WestRoad_G+1_open_terrace.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
@@ -244,7 +356,7 @@
       document.getElementById("sec-elev-duplex").hidden = (key !== "duplex");
       document.getElementById("sec-elev-open").hidden = (key !== "open");
     });
-    if (renders) return;
+    if (renders) { if (window.startBlender3D) window.startBlender3D(); return; }
     load(key);
     setTimeout(refit, 50);                        // a tab that was hidden had no size when it loaded
   }
