@@ -121,10 +121,19 @@
 
 <section id="sec-blender" hidden>
   <h2>3D model (Blender)</h2>
-  <p class="hint" style="padding:0 0 8px">Drag to rotate, wheel or pinch to zoom, right-drag or two fingers to move. Pick a floor to see it with the floors above and the ceiling taken off.</p>
+  <p class="hint" style="padding:0 0 8px">Aerial view: drag to rotate, wheel or pinch to zoom, right-drag or two fingers to move; pick a floor to see it with the floors above and the ceiling taken off. Virtual visit: walk with the arrow keys (or W A S D, or the on-screen arrows), drag to look around, pick a floor to go there.</p>
   <div class="viewer" id="b3d-wrap" style="position:relative">
     <canvas id="b3d" style="width:100%;height:100%;display:block;touch-action:none"></canvas>
     <div class="progress" id="b3d-prog"><span id="b3d-label">Loading 3D model</span></div>
+    <div id="b3d-pad" hidden>
+      <button data-move="turnL" aria-label="Turn left">&#9664;</button>
+      <div><button data-move="fwd" aria-label="Walk forward">&#9650;</button><button data-move="back" aria-label="Walk back">&#9660;</button></div>
+      <button data-move="turnR" aria-label="Turn right">&#9654;</button>
+    </div>
+  </div>
+  <div class="controls" id="b3d-mode">
+    <button data-mode="aerial" class="on">Aerial view</button>
+    <button data-mode="walk">Virtual visit</button>
   </div>
   <div class="controls" id="b3d-floors">
     <button data-floor="9" class="on">Whole house</button>
@@ -195,6 +204,12 @@
 <style>
   #b3d-floors button { border:1px solid var(--accent); background:#fff; color:var(--accent); padding:6px 12px; border-radius:16px; cursor:pointer; }
   #b3d-floors button.on { background:var(--accent); color:#fff; }
+  #b3d-mode button { border:1px solid var(--accent); background:#fff; color:var(--accent); padding:6px 12px; border-radius:16px; cursor:pointer; }
+  #b3d-mode button.on { background:var(--accent); color:#fff; }
+  #b3d-pad { position:absolute; right:12px; bottom:12px; display:flex; align-items:center; gap:6px; user-select:none; }
+  #b3d-pad[hidden] { display:none; }
+  #b3d-pad div { display:flex; flex-direction:column; gap:6px; }
+  #b3d-pad button { width:48px; height:48px; border-radius:50%; border:none; background:rgba(255,255,255,0.85); font-size:18px; box-shadow:0 1px 4px rgba(0,0,0,0.25); touch-action:none; }
 </style>
 <script type="importmap">
   { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
@@ -272,6 +287,64 @@
       camera.position.copy(t).addScaledVector(dir.normalize(), radius * (whole ? 1.5 : 0.95));
       controls.target.copy(t); controls.update();
     }
+    // ---- virtual visit: eye 1.6 m above the floor, walk and turn, drag to look (no collisions, as in Sweet Home 3D) ----
+    const FT = 0.3048, F2F = 3.2004, EYE = 1.6;
+    const STARTS = { 0: [1.9, 24.5], 1: [5.3, 18.0], 2: [7.5, 22.0] };   // plan feet: GF walkway by the car, FF hall at the main door, terrace
+    let walking = false, yaw = 0, pitch = 0, walkFloor = 0;
+    const keys = {};
+    function walkTo(f) {
+      walkFloor = f in STARTS ? f : 0;
+      const [x, y] = STARTS[walkFloor];
+      camera.position.set(x * FT, walkFloor * F2F + EYE, y * FT);
+      yaw = 0; pitch = 0; applyLook();
+    }
+    function applyLook() { camera.rotation.set(pitch, yaw, 0, "YXZ"); }
+    function setMode(walk) {
+      walking = walk; controls.enabled = !walk;
+      document.getElementById("b3d-pad").hidden = !walk;
+      document.querySelectorAll("#b3d-mode button").forEach(x => x.classList.toggle("on", (x.dataset.mode === "walk") === walk));
+      camera.fov = walk ? 63 : 40; camera.near = walk ? 0.05 : 0.1; camera.updateProjectionMatrix();
+      if (walk) { showFloor(9); walkTo(current < 9 ? current : 0); markFloor(walkFloor); }
+      else { showFloor(current); resetView(); markFloor(current); }
+    }
+    function markFloor(f) {
+      document.querySelectorAll("#b3d-floors button[data-floor]").forEach(x => x.classList.toggle("on", +x.dataset.floor === f));
+    }
+    document.querySelectorAll("#b3d-mode button").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode === "walk")));
+    window.addEventListener("keydown", e => {
+      if (!walking || document.getElementById("sec-blender").hidden) return;
+      const k = { ArrowUp: "fwd", KeyW: "fwd", ArrowDown: "back", KeyS: "back", ArrowLeft: "turnL", KeyA: "turnL", ArrowRight: "turnR", KeyD: "turnR" }[e.code];
+      if (k) { keys[k] = true; e.preventDefault(); }
+    });
+    window.addEventListener("keyup", e => {
+      const k = { ArrowUp: "fwd", KeyW: "fwd", ArrowDown: "back", KeyS: "back", ArrowLeft: "turnL", KeyA: "turnL", ArrowRight: "turnR", KeyD: "turnR" }[e.code];
+      if (k) keys[k] = false;
+    });
+    document.querySelectorAll("#b3d-pad button").forEach(b => {
+      const k = b.dataset.move;
+      b.addEventListener("pointerdown", e => { keys[k] = true; e.preventDefault(); });
+      ["pointerup", "pointerleave", "pointercancel"].forEach(ev => b.addEventListener(ev, () => keys[k] = false));
+    });
+    let drag = null;
+    canvas.addEventListener("pointerdown", e => { if (walking) { drag = [e.clientX, e.clientY]; canvas.setPointerCapture(e.pointerId); } });
+    canvas.addEventListener("pointermove", e => {
+      if (!walking || !drag) return;
+      yaw += (e.clientX - drag[0]) * 0.005; pitch = Math.max(-1.2, Math.min(1.2, pitch + (e.clientY - drag[1]) * 0.004));
+      drag = [e.clientX, e.clientY]; applyLook();
+    });
+    canvas.addEventListener("pointerup", () => drag = null);
+    canvas.addEventListener("wheel", e => { if (walking) { e.preventDefault(); step(-e.deltaY * 0.004); } }, { passive: false });
+    function step(d) { camera.position.x -= Math.sin(yaw) * d; camera.position.z -= Math.cos(yaw) * d; }
+    let last = performance.now();
+    function walkTick() {
+      const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+      if (!walking) return;
+      if (keys.fwd) step(1.4 * dt);
+      if (keys.back) step(-1.4 * dt);
+      if (keys.turnL) { yaw += 1.2 * dt; applyLook(); }
+      if (keys.turnR) { yaw -= 1.2 * dt; applyLook(); }
+    }
+
     function showFloor(f) {
       Object.entries(levels).forEach(([name, o]) => {
         const m = name.match(/^Level_(\d+)(_ceilings)?/);
@@ -281,12 +354,13 @@
       });
     }
     document.querySelectorAll("#b3d-floors button").forEach(b => b.addEventListener("click", () => {
-      if (b.hasAttribute("data-reset")) { resetView(); return; }
-      document.querySelectorAll("#b3d-floors button[data-floor]").forEach(x => x.classList.toggle("on", x === b));
+      if (b.hasAttribute("data-reset")) { if (walking) walkTo(walkFloor); else resetView(); return; }
+      if (walking) { walkTo(+b.dataset.floor); markFloor(walkFloor); return; }
+      markFloor(+b.dataset.floor);
       current = +b.dataset.floor; showFloor(current); resetView();
     }));
     resize();
-    renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); });
+    renderer.setAnimationLoop(() => { walkTick(); if (!walking) controls.update(); renderer.render(scene, camera); });
   };
 </script>
 
@@ -294,7 +368,7 @@
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20261005c";
+  var VERSION = "20261005d";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", open: "Rajesh_WestRoad_G+1_open_terrace.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
