@@ -38,6 +38,11 @@
   .plans { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; max-width:1200px; }
   .plans figure { margin:0; background:#fff; border-radius:10px; padding:8px; box-shadow:0 1px 4px rgba(0,0,0,.08); }
   .plans img { width:100%; height:auto; display:block; }
+  .rooms-wrap { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:16px; max-width:1200px; margin-top:16px; }
+  table.rooms { border-collapse:collapse; background:#fff; border-radius:10px; box-shadow:0 1px 4px rgba(0,0,0,.08); font-size:14px; width:100%; }
+  table.rooms caption { font-weight:700; text-align:left; padding:4px 0 6px; }
+  table.rooms th, table.rooms td { padding:5px 8px; border-bottom:1px solid #eee; text-align:left; }
+  table.rooms td:nth-child(n+3), table.rooms th:nth-child(n+3) { text-align:right; }
   .plans figcaption { text-align:center; font-weight:600; padding:6px 0 2px; }
   .plans[hidden], section[hidden] { display:none; }
   footer { padding:16px 20px 30px; color:#777; font-size:0.8rem; }
@@ -146,6 +151,19 @@
   <h2>Blender walkthrough, G+1 plan (HD)</h2>
   <p class="hint" style="padding:0 0 8px">Aerial view, the approach from West Road, every main room, the 3D floor plans and the house at dusk with the lights on.</p>
   <video controls preload="metadata" playsinline src="blender/Rajesh_WestRoad_G+1_blender_walkthrough.mp4"></video>
+  <h2>Detailed floor plans with measurements</h2>
+  <p class="hint" style="padding:0 0 8px">Room sizes are clear inside the walls (walls 9" outside, 4.5" inside). "max" marks an L-shaped or notched room: its longest width and depth. Green lines are the column-to-column and outer sizes. Tap a plan to open it full size and zoom.</p>
+  <div class="plans">
+    <figure><a href="blender/plan2d_gf.svg" target="_blank"><img src="blender/plan2d_gf.svg" alt="Ground floor measured plan" loading="lazy"></a><figcaption>Ground floor</figcaption></figure>
+    <figure><a href="blender/plan2d_ff.svg" target="_blank"><img src="blender/plan2d_ff.svg" alt="First floor measured plan" loading="lazy"></a><figcaption>First floor</figcaption></figure>
+    <figure><a href="blender/plan2d_tr.svg" target="_blank"><img src="blender/plan2d_tr.svg" alt="Terrace measured plan" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
+  </div>
+  <div class="rooms-wrap">
+    <table class="rooms"><caption>Ground floor</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>KITCHEN</td><td>max 12'-6&quot; x 8'-4&quot;</td><td>103</td><td>9.6</td></tr><tr><td>BEDROOM</td><td>12'-6&quot; x 10'-9&quot;</td><td>134</td><td>12.5</td></tr><tr><td>TOILET</td><td>8'-0&quot; x 4'-1&quot;</td><td>33</td><td>3.0</td></tr><tr><td>STAIR</td><td>12'-6&quot; x 6'-0&quot;</td><td>75</td><td>7.0</td></tr><tr><td>BACK PASSAGE / WASH (covered)</td><td>18'-6&quot; x 4'-10&quot;</td><td>88</td><td>8.2</td></tr><tr><td>PARKING</td><td>10'-6&quot; x 12'-6&quot;</td><td>131</td><td>12.2</td></tr><tr><td>LIVING</td><td>10'-6&quot; x 13'-0&quot;</td><td>136</td><td>12.7</td></tr><tr><td>SIDE PASSAGE (outside, tapered)</td><td>2'-4&quot; x 14'-6&quot;</td><td>25</td><td>2.3</td></tr></table>
+    <table class="rooms"><caption>First floor</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>KITCHEN</td><td>max 12'-6&quot; x 8'-4&quot;</td><td>103</td><td>9.6</td></tr><tr><td>BEDROOM</td><td>12'-6&quot; x 10'-9&quot;</td><td>134</td><td>12.5</td></tr><tr><td>TOILET</td><td>8'-0&quot; x 4'-1&quot;</td><td>33</td><td>3.0</td></tr><tr><td>STAIR ARRIVAL</td><td>2'-9&quot; x 6'-0&quot;</td><td>16</td><td>1.5</td></tr><tr><td>WASH AREA (covered, open above 3' parapet)</td><td>8'-1&quot; x 4'-1&quot;</td><td>33</td><td>3.1</td></tr><tr><td>SMALL BEDROOM 2 bunks</td><td>6'-6&quot; x 8'-0&quot;</td><td>52</td><td>4.8</td></tr><tr><td>HALL</td><td>max 10'-6&quot; x 19'-0&quot;</td><td>175</td><td>16.3</td></tr><tr><td>BALCONY</td><td>10'-6&quot; x 5'-9&quot;</td><td>60</td><td>5.6</td></tr></table>
+    <table class="rooms"><caption>Terrace</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>OPEN TERRACE (north bay, L over wash area to the bath)</td><td>max 15'-4&quot; x 31'-1&quot;</td><td>352</td><td>32.7</td></tr><tr><td>T-BEDROOM 1</td><td>max 12'-3&quot; x 9'-10&quot;</td><td>120</td><td>11.1</td></tr><tr><td>T-BEDROOM 2</td><td>12'-3&quot; x 9'-3&quot;</td><td>114</td><td>10.6</td></tr><tr><td>T-BATH</td><td>8'-0&quot; x 4'-1&quot;</td><td>33</td><td>3.0</td></tr><tr><td>STAIR HEAD</td><td>2'-9&quot; x 6'-0&quot;</td><td>16</td><td>1.5</td></tr></table>
+  </div>
+
   <h2>Exterior</h2>
   <p class="hint" style="padding:0 0 8px">Rendered in Blender (Cycles) from the same model: light stone cladding on the stair tower, teak fins and gate, real glass, LED lines, afternoon sun from the south-west. Tap a picture to open it full size.</p>
   <div class="plans">
@@ -370,7 +388,7 @@
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20261005e";
+  var VERSION = "20261005f";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", open: "Rajesh_WestRoad_G+1_open_terrace.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
