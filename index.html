@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>West Road House, Mancherial</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script src="lib/big.min.js"></script>
 <script src="lib/gl-matrix-min.js"></script>
 <script src="lib/jszip.min.js"></script>
@@ -382,13 +383,15 @@
     resize();
     renderer.setAnimationLoop(() => { walkTick(); if (!walking) controls.update(); renderer.render(scene, camera); });
   };
+  // module scripts run after the page's inline router, so a reload on #blender has to start the model here
+  if (!document.getElementById("sec-blender").hidden) window.startBlender3D();
 </script>
 
 <footer>Built with Sweet Home 3D and its HTML5 viewer (GNU GPL). Plans by the owner with Galaxy Architecture, Mancherial.</footer>
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20261007c";
+  var VERSION = "20261007d";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", open: "Rajesh_WestRoad_G+1_open_terrace.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
