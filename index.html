@@ -55,10 +55,10 @@
 </header>
 
 <div class="tabs">
-  <button id="tab-rental" class="on" onclick="show('rental')">G+1 plan</button>
-  <button id="tab-open" onclick="show('open')">G+1, open terrace</button>
-  <button id="tab-duplex" onclick="show('duplex')">Duplex plan</button>
-  <button id="tab-blender" onclick="show('blender')">Blender</button>
+  <button id="tab-rental" class="on" onclick="go('rental')">G+1 plan</button>
+  <button id="tab-open" onclick="go('open')">G+1, open terrace</button>
+  <button id="tab-duplex" onclick="go('duplex')">Duplex plan</button>
+  <button id="tab-blender" onclick="go('blender')">Blender</button>
 </div>
 
 <div class="viewer" id="view-rental">
@@ -388,7 +388,7 @@
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20261007a";
+  var VERSION = "20261007b";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", open: "Rajesh_WestRoad_G+1_open_terrace.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
@@ -464,7 +464,12 @@
   }
   window.addEventListener("resize", function () { setTimeout(refit, 50); });
   window.addEventListener("orientationchange", function () { setTimeout(refit, 300); });
-  show("rental");
+  // routing: #g1, #open-terrace, #duplex, #blender (stub pages in g1/, open-terrace/, duplex/, blender/ redirect here)
+  var ROUTES = { "g1": "rental", "open-terrace": "open", "duplex": "duplex", "blender": "blender" };
+  function go(key) { location.hash = Object.keys(ROUTES).filter(function (r) { return ROUTES[r] === key; })[0]; }
+  function route() { show(ROUTES[location.hash.slice(1)] || "rental"); }
+  window.addEventListener("hashchange", route);
+  route();
 </script>
 </body>
 </html>
