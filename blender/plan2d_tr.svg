@@ -118,27 +118,27 @@
 <g stroke="#1d7a3a" stroke-width="1.2"><line x1="0.0" y1="883.9" x2="756.9" y2="883.9"/><line x1="0.0" y1="823.0" x2="0.0" y2="883.9" stroke-dasharray="3 3"/><line x1="756.9" y1="823.0" x2="756.9" y2="883.9" stroke-dasharray="3 3"/></g>
 <line x1="-6.0" y1="889.9" x2="6.0" y2="877.9" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="750.9" y1="889.9" x2="762.9" y2="877.9" stroke="#1d7a3a" stroke-width="2"/>
-<text x="378.5" y="877.9" font-size="15" fill="#1d7a3a" text-anchor="middle" transform="rotate(0 378.5 877.9)">24'-10"</text>
+<text x="378.5" y="877.9" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(0 378.5 877.9)">24'-10"</text>
 <g stroke="#1d7a3a" stroke-width="1.2"><line x1="802.6" y1="-147.3" x2="802.6" y2="823.0"/><line x1="756.9" y1="-147.3" x2="802.6" y2="-147.3" stroke-dasharray="3 3"/><line x1="756.9" y1="823.0" x2="802.6" y2="823.0" stroke-dasharray="3 3"/></g>
 <line x1="796.6" y1="-153.3" x2="808.6" y2="-141.3" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="796.6" y1="817.0" x2="808.6" y2="829.0" stroke="#1d7a3a" stroke-width="2"/>
-<text x="808.6" y="337.8" font-size="15" fill="#1d7a3a" text-anchor="middle" transform="rotate(90 808.6 337.8)">31'-10"</text>
+<text x="808.6" y="337.8" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(90 808.6 337.8)">31'-10"</text>
 <g stroke="#1d7a3a" stroke-width="1.2"><line x1="863.6" y1="22.9" x2="863.6" y2="312.4"/><line x1="756.9" y1="22.9" x2="863.6" y2="22.9" stroke-dasharray="3 3"/><line x1="756.9" y1="312.4" x2="863.6" y2="312.4" stroke-dasharray="3 3"/></g>
 <line x1="857.6" y1="16.9" x2="869.6" y2="28.9" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="857.6" y1="306.4" x2="869.6" y2="318.4" stroke="#1d7a3a" stroke-width="2"/>
-<text x="869.6" y="167.6" font-size="15" fill="#1d7a3a" text-anchor="middle" transform="rotate(90 869.6 167.6)">9'-6"</text>
+<text x="869.6" y="167.6" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(90 869.6 167.6)">9'-6"</text>
 <g stroke="#1d7a3a" stroke-width="1.2"><line x1="863.6" y1="323.9" x2="863.6" y2="605.8"/><line x1="756.9" y1="323.9" x2="863.6" y2="323.9" stroke-dasharray="3 3"/><line x1="756.9" y1="605.8" x2="863.6" y2="605.8" stroke-dasharray="3 3"/></g>
 <line x1="857.6" y1="317.9" x2="869.6" y2="329.9" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="857.6" y1="599.8" x2="869.6" y2="611.8" stroke="#1d7a3a" stroke-width="2"/>
-<text x="869.6" y="464.8" font-size="15" fill="#1d7a3a" text-anchor="middle" transform="rotate(90 869.6 464.8)">9'-3"</text>
+<text x="869.6" y="464.8" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(90 869.6 464.8)">9'-3"</text>
 <g stroke="#1d7a3a" stroke-width="1.2"><line x1="863.6" y1="617.2" x2="863.6" y2="800.1"/><line x1="756.9" y1="617.2" x2="863.6" y2="617.2" stroke-dasharray="3 3"/><line x1="756.9" y1="800.1" x2="863.6" y2="800.1" stroke-dasharray="3 3"/></g>
 <line x1="857.6" y1="611.2" x2="869.6" y2="623.2" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="857.6" y1="794.1" x2="869.6" y2="806.1" stroke="#1d7a3a" stroke-width="2"/>
-<text x="869.6" y="708.7" font-size="15" fill="#1d7a3a" text-anchor="middle" transform="rotate(90 869.6 708.7)">6'-0"</text>
+<text x="869.6" y="708.7" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(90 869.6 708.7)">6'-0"</text>
 <g stroke="#1d7a3a" stroke-width="1.2"><line x1="-45.7" y1="11.4" x2="-45.7" y2="811.5"/><line x1="0.0" y1="11.4" x2="-45.7" y2="11.4" stroke-dasharray="3 3"/><line x1="0.0" y1="811.5" x2="-45.7" y2="811.5" stroke-dasharray="3 3"/></g>
 <line x1="-51.7" y1="5.4" x2="-39.7" y2="17.4" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="-51.7" y1="805.5" x2="-39.7" y2="817.5" stroke="#1d7a3a" stroke-width="2"/>
-<text x="-39.7" y="411.5" font-size="15" fill="#1d7a3a" text-anchor="middle" transform="rotate(90 -39.7 411.5)">26'-3"</text>
+<text x="-39.7" y="411.5" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(90 -39.7 411.5)">26'-3"</text>
 <g text-anchor="middle"><text x="187.8" y="293.5" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">OPEN TERRACE</text><text x="187.8" y="313.9" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">max 15'-4" x 31'-1"</text><text x="187.8" y="334.3" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">352 sq ft</text></g>
 <g text-anchor="middle"><text x="548.3" y="143.3" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">T-BEDROOM 1</text><text x="548.3" y="163.7" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">max 12'-3" x 9'-10"</text><text x="548.3" y="184.1" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">120 sq ft</text></g>
 <g text-anchor="middle"><text x="546.7" y="444.4" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">T-BEDROOM 2</text><text x="546.7" y="464.8" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">12'-3" x 9'-3"</text><text x="546.7" y="485.2" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">114 sq ft</text></g>
