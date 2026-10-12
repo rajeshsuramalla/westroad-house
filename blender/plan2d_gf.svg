@@ -5,11 +5,11 @@
 <polygon points="490.2,-124.5 734.1,-124.5 734.1,0.0 490.2,0.0" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
 <polygon points="353.7,617.2 734.1,617.2 734.1,800.1 353.7,800.1" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
 <polygon points="-68.6,-147.3 478.8,-147.3 478.8,0.0 -55.9,0.0" fill="#f1f3f0" stroke="#c9c2b4" stroke-width="1"/>
-<polygon points="22.9,411.5 342.3,411.5 342.3,823.0 22.9,823.0" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
-<polygon points="22.9,22.9 342.3,22.9 342.3,388.6 22.9,388.6" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
-<polygon points="353.7,278.1 445.1,278.1 445.1,388.6 353.7,388.6" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
-<polygon points="0.0,0.0 0.0,411.5 -20.3,411.5 -55.9,0.0" fill="#f1f3f0" stroke="#c9c2b4" stroke-width="1"/>
-<polygon points="-20.3,411.5 22.9,411.5 22.9,823.0 15.2,823.0" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
+<polygon points="22.9,381.0 342.3,381.0 342.3,823.0 22.9,823.0" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
+<polygon points="22.9,22.9 342.3,22.9 342.3,358.1 22.9,358.1" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
+<polygon points="353.7,278.1 445.1,278.1 445.1,358.1 353.7,358.1" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
+<polygon points="0.0,0.0 0.0,381.0 -22.9,381.0 -55.9,0.0" fill="#f1f3f0" stroke="#c9c2b4" stroke-width="1"/>
+<polygon points="-22.9,381.0 22.9,381.0 22.9,823.0 15.2,823.0" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
 <polygon points="103.6,539.6 274.4,539.6 274.4,813.8 103.6,813.8" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="413.6,22.9 473.6,22.9 473.6,84.1 413.6,84.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="473.6,22.9 533.6,22.9 533.6,84.1 473.6,84.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
@@ -38,7 +38,7 @@
 <polygon points="337.8,187.7 337.8,284.7 323.6,284.7 323.6,187.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="269.4,16.6 341.9,16.6 341.9,93.2 269.4,93.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="249.8,161.2 249.8,311.2 39.8,311.2 39.8,161.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="271.5,355.3 301.5,355.3 301.5,385.3 271.5,385.3" fill="none" stroke="#d3dae0" stroke-width="1"/>
+<polygon points="271.5,324.9 301.5,324.9 301.5,354.9 271.5,354.9" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="29.5,281.9 29.5,144.8 34.5,144.8 34.5,281.9" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="541.0,599.2 373.4,599.1 373.4,594.1 541.0,594.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="-57.9,-88.4 -27.4,-88.4 -27.4,-57.9 -57.9,-57.9" fill="none" stroke="#d3dae0" stroke-width="1"/>
@@ -52,9 +52,9 @@
 <polygon points="641.9,-124.5 643.4,-124.5 643.4,-63.5 641.9,-63.5" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="644.3,-61.0 645.8,-61.0 645.8,0.0 644.3,0.0" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="337.7,184.4 342.3,184.4 342.3,288.0 337.7,288.0" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="182.9,352.5 304.8,352.5 304.8,388.2 182.9,388.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="181.4,351.3 306.3,351.3 306.3,389.4 181.4,389.4" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="179.8,384.2 307.9,384.2 307.9,385.7 179.8,385.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
+<polygon points="182.9,322.0 304.8,322.0 304.8,357.7 182.9,357.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
+<polygon points="181.4,320.8 306.3,320.8 306.3,358.9 181.4,358.9" fill="none" stroke="#d3dae0" stroke-width="1"/>
+<polygon points="179.8,353.7 307.9,353.7 307.9,355.2 179.8,355.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="443.5,293.4 445.0,293.4 445.0,342.1 443.5,342.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="0.0,762.0 45.7,762.0 45.7,823.0 0.0,823.0" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="4.7,823.0 6.9,823.0 6.9,824.2 4.7,824.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
@@ -80,7 +80,7 @@
 <polygon points="272.5,815.0 276.1,815.0 276.1,818.7 272.5,818.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="290.8,815.0 294.4,815.0 294.4,818.7 290.8,818.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="309.1,815.0 312.7,815.0 312.7,818.7 309.1,818.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="22.9,400.1 22.9,0.0 0.0,0.0 0.0,400.1" fill="#2b2f35"/>
+<polygon points="22.9,369.6 22.9,0.0 0.0,0.0 0.0,369.6" fill="#2b2f35"/>
 <polygon points="-83.8,-146.7 -2.6,793.1 12.6,791.8 -68.6,-148.0" fill="#2b2f35"/>
 <polygon points="0.0,22.9 495.9,22.9 495.9,0.0 0.0,0.0" fill="#2b2f35"/>
 <polygon points="490.2,17.1 490.2,-141.6 478.8,-141.6 478.8,17.1" fill="#2b2f35"/>
@@ -92,7 +92,7 @@
 <polygon points="342.3,182.9 342.3,811.5 353.7,811.5 353.7,182.9" fill="#2b2f35"/>
 <polygon points="348.0,278.1 745.5,278.1 745.5,266.7 348.0,266.7" fill="#2b2f35"/>
 <polygon points="348.0,617.2 745.5,617.2 745.5,605.8 348.0,605.8" fill="#2b2f35"/>
-<polygon points="11.4,411.5 348.0,411.5 348.0,388.6 11.4,388.6" fill="#2b2f35"/>
+<polygon points="11.4,381.0 348.0,381.0 348.0,358.1 11.4,358.1" fill="#2b2f35"/>
 <polygon points="0.0,-7.6 0.0,30.5 22.9,30.5 22.9,-7.6" fill="#2b2f35"/>
 <polygon points="328.9,30.5 367.0,30.5 367.0,-7.6 328.9,-7.6" fill="#2b2f35"/>
 <polygon points="734.1,-7.6 734.1,30.5 756.9,30.5 756.9,-7.6" fill="#2b2f35"/>
@@ -107,8 +107,8 @@
 <polygon points="734.1,792.5 734.1,830.6 756.9,830.6 756.9,792.5" fill="#2b2f35"/>
 <polygon points="0.0,-147.3 0.0,-124.5 22.9,-124.5 22.9,-147.3" fill="#2b2f35"/>
 <polygon points="473.1,-124.5 495.9,-124.5 495.9,-147.3 473.1,-147.3" fill="#2b2f35"/>
-<polygon points="445.1,278.1 445.1,400.1 456.6,400.1 456.6,278.1" fill="#2b2f35"/>
-<polygon points="353.7,400.0 450.9,400.0 450.9,388.6 353.7,388.6" fill="#2b2f35"/>
+<polygon points="445.1,278.1 445.1,369.6 456.6,369.6 456.6,278.1" fill="#2b2f35"/>
+<polygon points="353.7,369.6 450.9,369.6 450.9,358.1 353.7,358.1" fill="#2b2f35"/>
 <polygon points="560.7,-124.5 560.7,-48.8 572.1,-48.8 572.1,-124.5" fill="#2b2f35"/>
 <polygon points="23.9,-11.7 115.4,-11.7 115.4,34.5 23.9,34.5" fill="#fff"/>
 <line x1="23.9" y1="33.5" x2="23.9" y2="125.0" stroke="#a0522d" stroke-width="2.5"/>
@@ -137,24 +137,24 @@
 <line x1="359.0" y1="353.6" x2="420.0" y2="353.6" stroke="#a0522d" stroke-width="2.5"/>
 <path d="M420.0,353.6 A61.0,61.0 0 0 1 359.0,292.6" fill="none" stroke="#a0522d" stroke-width="1" stroke-dasharray="5 4"/>
 <text x="322.9" y="323.1" font-size="11" fill="#555" text-anchor="middle" transform="rotate(90 322.9 323.1)">2'-0"</text>
-<polygon points="361.3,382.3 437.5,382.3 437.5,406.4 361.3,406.4" fill="#fff"/>
-<line x1="361.3" y1="405.4" x2="361.3" y2="481.6" stroke="#a0522d" stroke-width="2.5"/>
-<path d="M361.3,481.6 A76.2,76.2 0 0 1 437.5,405.4" fill="none" stroke="#a0522d" stroke-width="1" stroke-dasharray="5 4"/>
-<text x="399.4" y="369.3" font-size="11" fill="#555" text-anchor="middle" transform="rotate(0 399.4 369.3)">2'-6"</text>
-<polygon points="23.9,384.4 145.8,384.4 145.8,415.7 23.9,415.7" fill="#fff"/>
-<line x1="23.9" y1="414.7" x2="23.9" y2="536.6" stroke="#a0522d" stroke-width="2.5"/>
-<path d="M23.9,536.6 A121.9,121.9 0 0 1 145.8,414.7" fill="none" stroke="#a0522d" stroke-width="1" stroke-dasharray="5 4"/>
-<text x="84.9" y="371.4" font-size="11" fill="#555" text-anchor="middle" transform="rotate(0 84.9 371.4)">4'-0"</text>
+<polygon points="361.3,351.8 437.5,351.8 437.5,375.9 361.3,375.9" fill="#fff"/>
+<line x1="361.3" y1="374.9" x2="361.3" y2="451.1" stroke="#a0522d" stroke-width="2.5"/>
+<path d="M361.3,451.1 A76.2,76.2 0 0 1 437.5,374.9" fill="none" stroke="#a0522d" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="399.4" y="338.8" font-size="11" fill="#555" text-anchor="middle" transform="rotate(0 399.4 338.8)">2'-6"</text>
+<polygon points="23.9,354.0 145.8,354.0 145.8,385.2 23.9,385.2" fill="#fff"/>
+<line x1="23.9" y1="384.2" x2="23.9" y2="506.1" stroke="#a0522d" stroke-width="2.5"/>
+<path d="M23.9,506.1 A121.9,121.9 0 0 1 145.8,384.2" fill="none" stroke="#a0522d" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="84.9" y="341.0" font-size="11" fill="#555" text-anchor="middle" transform="rotate(0 84.9 341.0)">4'-0"</text>
 <polygon points="349.9,788.4 441.3,788.4 441.3,834.6 349.9,834.6" fill="#fff"/>
 <line x1="349.9" y1="789.4" x2="441.3" y2="789.4" stroke="#2f7fb5" stroke-width="1.6"/>
 <line x1="349.9" y1="811.5" x2="441.3" y2="811.5" stroke="#2f7fb5" stroke-width="1.6"/>
 <line x1="349.9" y1="833.6" x2="441.3" y2="833.6" stroke="#2f7fb5" stroke-width="1.6"/>
 <text x="395.6" y="775.4" font-size="11" fill="#555" text-anchor="middle" transform="rotate(0 395.6 775.4)">3'-0"</text>
-<polygon points="182.9,383.5 304.8,383.5 304.8,416.6 182.9,416.6" fill="#fff"/>
-<line x1="182.9" y1="384.5" x2="304.8" y2="384.5" stroke="#2f7fb5" stroke-width="1.6"/>
-<line x1="182.9" y1="400.1" x2="304.8" y2="400.1" stroke="#2f7fb5" stroke-width="1.6"/>
-<line x1="182.9" y1="415.6" x2="304.8" y2="415.6" stroke="#2f7fb5" stroke-width="1.6"/>
-<text x="243.8" y="370.5" font-size="11" fill="#555" text-anchor="middle" transform="rotate(0 243.8 370.5)">4'-0"</text>
+<polygon points="182.9,353.0 304.8,353.0 304.8,386.1 182.9,386.1" fill="#fff"/>
+<line x1="182.9" y1="354.0" x2="304.8" y2="354.0" stroke="#2f7fb5" stroke-width="1.6"/>
+<line x1="182.9" y1="369.6" x2="304.8" y2="369.6" stroke="#2f7fb5" stroke-width="1.6"/>
+<line x1="182.9" y1="385.1" x2="304.8" y2="385.1" stroke="#2f7fb5" stroke-width="1.6"/>
+<text x="243.8" y="340.0" font-size="11" fill="#555" text-anchor="middle" transform="rotate(0 243.8 340.0)">4'-0"</text>
 <polygon points="28.0,167.6 28.0,259.1 -5.1,259.1 -5.1,167.6" fill="#fff"/>
 <line x1="27.0" y1="167.6" x2="27.0" y2="259.1" stroke="#2f7fb5" stroke-width="1.6"/>
 <line x1="11.4" y1="167.6" x2="11.4" y2="259.1" stroke="#2f7fb5" stroke-width="1.6"/>
@@ -205,35 +205,35 @@
 <line x1="484.2" y1="-100.2" x2="496.2" y2="-112.2" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="728.1" y1="-100.2" x2="740.1" y2="-112.2" stroke="#1d7a3a" stroke-width="2"/>
 <text x="612.1" y="-112.2" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(0 612.1 -112.2)">8'-0"</text>
-<g stroke="#1d7a3a" stroke-width="1.2"><line x1="-106.7" y1="411.5" x2="-106.7" y2="823.0"/><line x1="0.0" y1="411.5" x2="-106.7" y2="411.5" stroke-dasharray="3 3"/><line x1="0.0" y1="823.0" x2="-106.7" y2="823.0" stroke-dasharray="3 3"/></g>
-<line x1="-112.7" y1="405.5" x2="-100.7" y2="417.5" stroke="#1d7a3a" stroke-width="2"/>
+<g stroke="#1d7a3a" stroke-width="1.2"><line x1="-106.7" y1="381.0" x2="-106.7" y2="823.0"/><line x1="0.0" y1="381.0" x2="-106.7" y2="381.0" stroke-dasharray="3 3"/><line x1="0.0" y1="823.0" x2="-106.7" y2="823.0" stroke-dasharray="3 3"/></g>
+<line x1="-112.7" y1="375.0" x2="-100.7" y2="387.0" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="-112.7" y1="817.0" x2="-100.7" y2="829.0" stroke="#1d7a3a" stroke-width="2"/>
-<text x="-100.7" y="617.2" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(90 -100.7 617.2)">13'-6"</text>
-<g stroke="#1d7a3a" stroke-width="1.2"><line x1="-106.7" y1="22.9" x2="-106.7" y2="388.6"/><line x1="0.0" y1="22.9" x2="-106.7" y2="22.9" stroke-dasharray="3 3"/><line x1="0.0" y1="388.6" x2="-106.7" y2="388.6" stroke-dasharray="3 3"/></g>
+<text x="-100.7" y="602.0" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(90 -100.7 602.0)">14'-6"</text>
+<g stroke="#1d7a3a" stroke-width="1.2"><line x1="-106.7" y1="22.9" x2="-106.7" y2="358.1"/><line x1="0.0" y1="22.9" x2="-106.7" y2="22.9" stroke-dasharray="3 3"/><line x1="0.0" y1="358.1" x2="-106.7" y2="358.1" stroke-dasharray="3 3"/></g>
 <line x1="-112.7" y1="16.9" x2="-100.7" y2="28.9" stroke="#1d7a3a" stroke-width="2"/>
-<line x1="-112.7" y1="382.6" x2="-100.7" y2="394.6" stroke="#1d7a3a" stroke-width="2"/>
-<text x="-100.7" y="205.7" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(90 -100.7 205.7)">12'-0"</text>
-<g stroke="#1d7a3a" stroke-width="1.2"><line x1="22.9" y1="370.3" x2="342.3" y2="370.3"/><line x1="22.9" y1="388.6" x2="22.9" y2="370.3" stroke-dasharray="3 3"/><line x1="342.3" y1="388.6" x2="342.3" y2="370.3" stroke-dasharray="3 3"/></g>
-<line x1="16.9" y1="376.3" x2="28.9" y2="364.3" stroke="#1d7a3a" stroke-width="2"/>
-<line x1="336.3" y1="376.3" x2="348.3" y2="364.3" stroke="#1d7a3a" stroke-width="2"/>
-<text x="182.6" y="364.3" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(0 182.6 364.3)">10'-6"</text>
+<line x1="-112.7" y1="352.1" x2="-100.7" y2="364.1" stroke="#1d7a3a" stroke-width="2"/>
+<text x="-100.7" y="190.5" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(90 -100.7 190.5)">11'-0"</text>
+<g stroke="#1d7a3a" stroke-width="1.2"><line x1="22.9" y1="339.8" x2="342.3" y2="339.8"/><line x1="22.9" y1="358.1" x2="22.9" y2="339.8" stroke-dasharray="3 3"/><line x1="342.3" y1="358.1" x2="342.3" y2="339.8" stroke-dasharray="3 3"/></g>
+<line x1="16.9" y1="345.8" x2="28.9" y2="333.8" stroke="#1d7a3a" stroke-width="2"/>
+<line x1="336.3" y1="345.8" x2="348.3" y2="333.8" stroke="#1d7a3a" stroke-width="2"/>
+<text x="182.6" y="333.8" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(0 182.6 333.8)">10'-6"</text>
 <g stroke="#1d7a3a" stroke-width="1.2"><line x1="-55.9" y1="-12.2" x2="0.0" y2="-12.2"/><line x1="-55.9" y1="0.0" x2="-55.9" y2="-12.2" stroke-dasharray="3 3"/><line x1="0.0" y1="0.0" x2="0.0" y2="-12.2" stroke-dasharray="3 3"/></g>
 <line x1="-61.9" y1="-6.2" x2="-49.9" y2="-18.2" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="-6.0" y1="-6.2" x2="6.0" y2="-18.2" stroke="#1d7a3a" stroke-width="2"/>
 <text x="-27.9" y="-18.2" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(0 -27.9 -18.2)">1'-10"</text>
-<g stroke="#1d7a3a" stroke-width="1.2"><line x1="-20.3" y1="423.7" x2="0.0" y2="423.7"/><line x1="-20.3" y1="411.5" x2="-20.3" y2="423.7" stroke-dasharray="3 3"/><line x1="0.0" y1="411.5" x2="0.0" y2="423.7" stroke-dasharray="3 3"/></g>
-<line x1="-26.3" y1="429.7" x2="-14.3" y2="417.7" stroke="#1d7a3a" stroke-width="2"/>
-<line x1="-6.0" y1="429.7" x2="6.0" y2="417.7" stroke="#1d7a3a" stroke-width="2"/>
-<text x="-10.2" y="417.7" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(0 -10.2 417.7)">0'-8"</text>
+<g stroke="#1d7a3a" stroke-width="1.2"><line x1="-22.9" y1="393.2" x2="0.0" y2="393.2"/><line x1="-22.9" y1="381.0" x2="-22.9" y2="393.2" stroke-dasharray="3 3"/><line x1="0.0" y1="381.0" x2="0.0" y2="393.2" stroke-dasharray="3 3"/></g>
+<line x1="-28.9" y1="399.2" x2="-16.9" y2="387.2" stroke="#1d7a3a" stroke-width="2"/>
+<line x1="-6.0" y1="399.2" x2="6.0" y2="387.2" stroke="#1d7a3a" stroke-width="2"/>
+<text x="-11.5" y="387.2" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(0 -11.5 387.2)">0'-9"</text>
 <g text-anchor="middle"><text x="545.8" y="120.5" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">KITCHEN</text><text x="545.8" y="140.9" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">max 12'-6" x 8'-4"</text><text x="545.8" y="161.3" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">103 sq ft</text></g>
 <g text-anchor="middle"><text x="543.9" y="421.6" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">BEDROOM</text><text x="543.9" y="442.0" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">12'-6" x 10'-9"</text><text x="543.9" y="462.4" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">134 sq ft</text></g>
 <g text-anchor="middle"><text x="612.1" y="-77.8" font-size="13" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">TOILET</text><text x="612.1" y="-62.2" font-size="12" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">8'-0" x 4'-1"</text><text x="612.1" y="-46.6" font-size="10" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">33 sq ft</text></g>
 <g text-anchor="middle"><text x="543.9" y="688.3" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">STAIR</text><text x="543.9" y="708.7" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">12'-6" x 6'-0"</text><text x="543.9" y="729.1" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">75 sq ft</text></g>
 <g text-anchor="middle"><text x="208.3" y="-89.5" font-size="13" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">BACK PASSAGE / WASH</text><text x="208.3" y="-73.9" font-size="12" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">18'-0" x 4'-10"</text><text x="208.3" y="-58.3" font-size="10" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">86 sq ft</text></g>
-<g text-anchor="middle"><text x="182.6" y="596.8" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">PARKING</text><text x="182.6" y="617.2" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">10'-6" x 13'-6"</text><text x="182.6" y="637.6" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">141 sq ft</text></g>
-<g text-anchor="middle"><text x="182.6" y="185.3" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">LIVING</text><text x="182.6" y="205.7" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">10'-6" x 12'-0"</text><text x="182.6" y="226.1" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">126 sq ft</text></g>
-<g text-anchor="middle" transform="rotate(-90 399.4 333.4)"><text x="399.4" y="317.8" font-size="13" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">PASS</text><text x="399.4" y="333.4" font-size="12" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">3'-0" x 3'-8"</text><text x="399.4" y="349.0" font-size="10" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">11 sq ft</text></g>
-<g text-anchor="middle" transform="rotate(-90 -20.4 173.7)"><text x="-20.4" y="173.7" font-size="12" font-weight="600" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">SIDE PASSAGE max 1'-10" x 13'-6" 17 sq ft</text></g>
+<g text-anchor="middle"><text x="182.6" y="581.6" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">PARKING</text><text x="182.6" y="602.0" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">10'-6" x 14'-6"</text><text x="182.6" y="622.4" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">152 sq ft</text></g>
+<g text-anchor="middle"><text x="182.6" y="170.1" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">LIVING</text><text x="182.6" y="190.5" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">10'-6" x 11'-0"</text><text x="182.6" y="210.9" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">115 sq ft</text></g>
+<g text-anchor="middle"><text x="399.4" y="302.5" font-size="13" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">PASS</text><text x="399.4" y="318.1" font-size="12" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">3'-0" x 2'-7"</text><text x="399.4" y="333.7" font-size="10" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">8 sq ft</text></g>
+<g text-anchor="middle" transform="rotate(-90 -20.8 164.0)"><text x="-20.8" y="164.0" font-size="12" font-weight="600" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">SIDE PASSAGE max 1'-10" x 12'-6" 16 sq ft</text></g>
 <text x="-146.68" y="-243.03999999999996" font-size="24" font-weight="700" fill="#222">Ground floor</text>
 <text x="-146.68" y="931.9200000000001" font-size="14" fill="#555">North is left, West Road is at the bottom. Room sizes are clear inside the walls. Walls 9" outside, 4.5" inside. North boundary wall 6", inside the plot line.</text>
 </svg>
