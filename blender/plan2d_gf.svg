@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-157 -273 1070 1217" font-family="Segoe UI, Arial, sans-serif">
 <rect x="-156.68" y="-273.03999999999996" width="1070.28" height="1216.96" fill="#fff"/>
-<polygon points="353.7,22.9 478.8,22.9 478.8,11.4 734.1,11.4 734.1,266.7 353.7,266.7" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
 <polygon points="353.7,278.1 734.1,278.1 734.1,605.8 353.7,605.8" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
+<polygon points="353.7,22.9 478.8,22.9 478.8,11.4 734.1,11.4 734.1,266.7 353.7,266.7" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
 <polygon points="490.2,-124.5 734.1,-124.5 734.1,0.0 490.2,0.0" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
 <polygon points="353.7,617.2 734.1,617.2 734.1,800.1 353.7,800.1" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
 <polygon points="-68.6,-147.3 478.8,-147.3 478.8,0.0 -55.9,0.0" fill="#f1f3f0" stroke="#c9c2b4" stroke-width="1"/>
@@ -10,6 +10,9 @@
 <polygon points="0.0,0.0 0.0,381.0 -22.9,381.0 -55.9,0.0" fill="#f1f3f0" stroke="#c9c2b4" stroke-width="1"/>
 <polygon points="-22.9,381.0 22.9,381.0 22.9,823.0 15.2,823.0" fill="#fbf7ef" stroke="#c9c2b4" stroke-width="1"/>
 <polygon points="103.6,539.6 274.4,539.6 274.4,813.8 103.6,813.8" fill="none" stroke="#d3dae0" stroke-width="1"/>
+<polygon points="729.4,386.7 729.5,569.7 546.5,569.7 546.4,386.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
+<polygon points="557.1,278.2 734.1,278.2 734.1,344.2 557.1,344.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
+<polygon points="396.5,387.6 546.5,387.6 546.5,567.6 396.5,567.6" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="413.6,22.9 473.6,22.9 473.6,84.1 413.6,84.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="473.6,22.9 533.6,22.9 533.6,84.1 473.6,84.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="533.6,22.9 593.6,22.9 593.6,84.1 533.6,84.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
@@ -24,9 +27,6 @@
 <polygon points="490.0,27.6 499.0,27.6 499.0,54.7 490.0,54.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="734.1,105.2 734.1,165.2 672.9,165.2 672.9,105.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="734.1,169.5 734.1,229.5 671.5,229.5 671.5,169.5" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="729.4,386.7 729.5,569.7 546.5,569.7 546.4,386.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="557.1,278.2 734.1,278.2 734.1,344.2 557.1,344.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="396.5,387.6 546.5,387.6 546.5,567.6 396.5,567.6" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="487.8,-123.8 568.8,-123.8 568.8,-81.3 487.8,-81.3" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="498.3,-128.9 558.3,-128.9 558.3,-113.9 498.3,-113.9" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="563.9,-119.0 563.9,-69.0 554.4,-69.0 554.4,-119.0" fill="none" stroke="#d3dae0" stroke-width="1"/>
@@ -43,11 +43,11 @@
 <polygon points="-57.9,-88.4 -27.4,-88.4 -27.4,-57.9 -57.9,-57.9" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="642.6,617.2 642.6,708.7 437.5,708.7 437.5,617.2" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="642.6,617.2 734.1,617.2 734.1,800.1 642.6,800.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
+<polygon points="729.5,356.3 734.1,356.3 734.1,600.1 729.5,600.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="413.6,22.2 734.1,22.2 734.1,84.7 413.6,84.7" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="670.1,85.2 734.1,85.2 734.1,105.0 670.1,105.0" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="413.6,22.7 734.1,22.7 734.1,79.1 413.6,79.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="677.8,105.2 734.2,105.2 734.2,232.3 677.8,232.3" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="729.5,356.3 734.1,356.3 734.1,600.1 729.5,600.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="641.9,-124.5 643.4,-124.5 643.4,-63.5 641.9,-63.5" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="644.3,-61.0 645.8,-61.0 645.8,0.0 644.3,0.0" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="337.7,184.4 342.3,184.4 342.3,288.0 337.7,288.0" fill="none" stroke="#d3dae0" stroke-width="1"/>
@@ -217,8 +217,8 @@
 <line x1="-28.9" y1="399.2" x2="-16.9" y2="387.2" stroke="#1d7a3a" stroke-width="2"/>
 <line x1="-6.0" y1="399.2" x2="6.0" y2="387.2" stroke="#1d7a3a" stroke-width="2"/>
 <text x="-11.5" y="387.2" font-size="15" fill="#1d7a3a" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3" transform="rotate(0 -11.5 387.2)">0'-9"</text>
-<g text-anchor="middle"><text x="545.8" y="120.5" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">KITCHEN</text><text x="545.8" y="140.9" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">max 12'-6" x 8'-4"</text><text x="545.8" y="161.3" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">103 sq ft</text></g>
 <g text-anchor="middle"><text x="543.9" y="421.6" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">BEDROOM</text><text x="543.9" y="442.0" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">12'-6" x 10'-9"</text><text x="543.9" y="462.4" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">134 sq ft</text></g>
+<g text-anchor="middle"><text x="545.8" y="120.5" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">KITCHEN</text><text x="545.8" y="140.9" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">max 12'-6" x 8'-4"</text><text x="545.8" y="161.3" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">103 sq ft</text></g>
 <g text-anchor="middle"><text x="612.1" y="-77.8" font-size="13" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">TOILET</text><text x="612.1" y="-62.2" font-size="12" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">8'-0" x 4'-1"</text><text x="612.1" y="-46.6" font-size="10" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">33 sq ft</text></g>
 <g text-anchor="middle"><text x="543.9" y="688.3" font-size="17" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">STAIR</text><text x="543.9" y="708.7" font-size="16" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">12'-6" x 6'-0"</text><text x="543.9" y="729.1" font-size="14" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">75 sq ft</text></g>
 <g text-anchor="middle"><text x="208.3" y="-89.5" font-size="13" font-weight="700" fill="#222" paint-order="stroke" stroke="#fff" stroke-width="3">BACK PASSAGE / WASH</text><text x="208.3" y="-73.9" font-size="12" font-weight="600" fill="#8a4b0f" paint-order="stroke" stroke="#fff" stroke-width="3">18'-0" x 4'-10"</text><text x="208.3" y="-58.3" font-size="10" font-weight="400" fill="#555" paint-order="stroke" stroke="#fff" stroke-width="3">86 sq ft</text></g>
