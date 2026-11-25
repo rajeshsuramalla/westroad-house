@@ -52,14 +52,14 @@
 <body>
 <header>
   <h1>West Road House, Mancherial</h1>
-  <p>G+1 with car parking, terrace rooms. 3D model, walk around it with the mouse or your finger.</p>
+  <p>New plan: G+2 with car parking and an open terrace. 3D model, walk around it with the mouse or your finger. The older G+1 and duplex studies are in the other tabs.</p>
 </header>
 
 <div class="tabs">
-  <button id="tab-rental" class="on" onclick="go('rental')">G+1 plan</button>
+  <button id="tab-blender" class="on" onclick="go('blender')">G+2 new plan</button>
+  <button id="tab-rental" onclick="go('rental')">G+1 plan (old)</button>
   <button id="tab-open" onclick="go('open')">G+1, open terrace</button>
   <button id="tab-duplex" onclick="go('duplex')">Duplex plan</button>
-  <button id="tab-blender" onclick="go('blender')">Blender</button>
 </div>
 
 <div class="viewer" id="view-rental">
@@ -126,7 +126,8 @@
 </section>
 
 <section id="sec-blender" hidden>
-  <h2>3D model (Blender)</h2>
+  <h2>3D model, G+2 plan</h2>
+  <p class="hint" style="padding:0 0 8px">Ground floor: kitchen, bedroom and outside toilet for mother, with the parking open right through to the back. First floor: hall with dining, two bedrooms and the bath entered from a lobby behind a curtain. Second floor: hall with dining, kitchen, bedroom, bath and an open wash area. Open terrace on top.</p>
   <p class="hint" style="padding:0 0 8px">Aerial view: drag to rotate, wheel or pinch to zoom, right-drag or two fingers to move; pick a floor to see it with the floors above and the ceiling taken off. Virtual visit: walk with the arrow keys (or W A S D, or the on-screen arrows), drag to look around, pick a floor to go there.</p>
   <div class="viewer" id="b3d-wrap" style="position:relative">
     <canvas id="b3d" style="width:100%;height:100%;display:block;touch-action:none"></canvas>
@@ -145,61 +146,57 @@
     <button data-floor="9" class="on">Whole house</button>
     <button data-floor="0">Ground floor</button>
     <button data-floor="1">First floor</button>
-    <button data-floor="2">Terrace</button>
+    <button data-floor="2">Second floor</button>
+    <button data-floor="3">Terrace</button>
     <button data-reset>Reset view</button>
   </div>
 
-  <h2>Blender walkthrough, G+1 plan (HD)</h2>
-  <p class="hint" style="padding:0 0 8px">Aerial view, the approach from West Road, every main room, the 3D floor plans and the house at dusk with the lights on.</p>
-  <video controls preload="metadata" playsinline src="blender/Rajesh_WestRoad_G+1_blender_walkthrough.mp4"></video>
   <h2>Detailed floor plans with measurements</h2>
   <p class="hint" style="padding:0 0 8px">Room sizes are clear inside the walls (walls 9" outside, 4.5" inside; north boundary wall 6", inside the plot line). "max" marks an L-shaped, notched or tapered room: its longest width and depth. Green lines are the column-to-column and outer sizes. Tap a plan to open it full size and zoom.</p>
   <div class="plans">
     <figure><a href="blender/plan2d_gf.svg" target="_blank"><img src="blender/plan2d_gf.svg" alt="Ground floor measured plan" loading="lazy"></a><figcaption>Ground floor</figcaption></figure>
     <figure><a href="blender/plan2d_ff.svg" target="_blank"><img src="blender/plan2d_ff.svg" alt="First floor measured plan" loading="lazy"></a><figcaption>First floor</figcaption></figure>
+    <figure><a href="blender/plan2d_sf.svg" target="_blank"><img src="blender/plan2d_sf.svg" alt="Second floor measured plan" loading="lazy"></a><figcaption>Second floor</figcaption></figure>
     <figure><a href="blender/plan2d_tr.svg" target="_blank"><img src="blender/plan2d_tr.svg" alt="Terrace measured plan" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
   </div>
   <div class="rooms-wrap">
-    <table class="rooms"><caption>Ground floor</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>KITCHEN</td><td>max 12&#x27;-6&quot; x 8&#x27;-4&quot;</td><td>103</td><td>9.6</td></tr><tr><td>BEDROOM</td><td>12&#x27;-6&quot; x 10&#x27;-9&quot;</td><td>134</td><td>12.5</td></tr><tr><td>TOILET</td><td>8&#x27;-0&quot; x 4&#x27;-1&quot;</td><td>33</td><td>3.0</td></tr><tr><td>STAIR</td><td>12&#x27;-6&quot; x 6&#x27;-0&quot;</td><td>75</td><td>7.0</td></tr><tr><td>BACK PASSAGE / WASH (covered)</td><td>18&#x27;-0&quot; x 4&#x27;-10&quot;</td><td>86</td><td>8.0</td></tr><tr><td>PARKING</td><td>10&#x27;-6&quot; x 14&#x27;-6&quot;</td><td>152</td><td>14.1</td></tr><tr><td>LIVING</td><td>10&#x27;-6&quot; x 11&#x27;-0&quot;</td><td>115</td><td>10.7</td></tr><tr><td>SIDE PASSAGE (outside, tapered)</td><td>max 1&#x27;-10&quot; x 12&#x27;-6&quot;</td><td>16</td><td>1.5</td></tr></table>
-    <table class="rooms"><caption>First floor</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>KITCHEN (galley along the east strip + bay)</td><td>max 18'-11&quot; x 7'-5&quot;</td><td>119</td><td>11.1</td></tr><tr><td>BEDROOM</td><td>12'-6&quot; x 10'-9&quot;</td><td>134</td><td>12.4</td></tr><tr><td>BATH common (door from the hall via the lobby)</td><td>8'-0&quot; x 5'-0&quot;</td><td>40</td><td>3.7</td></tr><tr><td>WASH LOBBY (basin)</td><td>4'-1&quot; x 5'-0&quot;</td><td>21</td><td>2.0</td></tr><tr><td>STAIR ARRIVAL</td><td>2'-9&quot; x 6'-0&quot;</td><td>16</td><td>1.5</td></tr><tr><td>WASH AREA back landing (covered, open above 3' parapet)</td><td>4'-1&quot; x 4'-1&quot;</td><td>17</td><td>1.6</td></tr><tr><td>HALL</td><td>10'-6&quot; x 19'-0&quot;</td><td>199</td><td>18.5</td></tr><tr><td>BALCONY</td><td>10'-6&quot; x 5'-9&quot;</td><td>60</td><td>5.6</td></tr></table>
-    <table class="rooms"><caption>Terrace</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>OPEN TERRACE (north bay, L over wash area to the bath)</td><td>max 15'-4&quot; x 31'-1&quot;</td><td>352</td><td>32.7</td></tr><tr><td>T-BEDROOM 1</td><td>max 12'-3&quot; x 9'-10&quot;</td><td>120</td><td>11.1</td></tr><tr><td>T-BEDROOM 2</td><td>12'-3&quot; x 9'-3&quot;</td><td>114</td><td>10.6</td></tr><tr><td>T-BATH</td><td>8'-0&quot; x 4'-1&quot;</td><td>33</td><td>3.0</td></tr><tr><td>STAIR HEAD</td><td>2'-9&quot; x 6'-0&quot;</td><td>16</td><td>1.5</td></tr></table>
-  </div>
-  <h2>Ground floor hall options (11'-0" chosen as final)</h2>
-  <p class="hint" style="padding:0 0 8px">The same ground floor with the living (hall) 11'-0", 12'-0" and 13'-0" deep; the parking takes what is left of the 27'-0". Side gap is the clear space between the living front corner and the north boundary wall. The living is final at 11'-0": the plan above is that one, with the bedroom entered from the kitchen; these three options are the same ground floor with the old bedroom pass from the hall. <a href="blender/plan2d_gf_hall_options.pdf" target="_blank">All three in one PDF, one plan per A4 page</a>.</p>
-  <div class="plans">
-    <figure><a href="blender/plan2d_gf_hall11.svg" target="_blank"><img src="blender/plan2d_gf_hall11.svg" alt="Ground floor, living 11 feet deep" loading="lazy"></a><figcaption>Living 11'-0", parking 14'-6", side gap 9"</figcaption></figure>
-    <figure><a href="blender/plan2d_gf_hall12.svg" target="_blank"><img src="blender/plan2d_gf_hall12.svg" alt="Ground floor, living 12 feet deep" loading="lazy"></a><figcaption>Living 12'-0", parking 13'-6", side gap 8"</figcaption></figure>
-    <figure><a href="blender/plan2d_gf_hall13.svg" target="_blank"><img src="blender/plan2d_gf_hall13.svg" alt="Ground floor, living 13 feet deep" loading="lazy"></a><figcaption>Living 13'-0", parking 12'-6", side gap 7"</figcaption></figure>
+    <table class="rooms"><caption>Ground floor</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>PARKING open to the back</td><td>10&#x27;-6&quot; x 27&#x27;-0&quot;</td><td>283</td><td>26.3</td></tr><tr><td>KITCHEN</td><td>max 12&#x27;-6&quot; x 8&#x27;-4&quot;</td><td>103</td><td>9.6</td></tr><tr><td>BEDROOM mother</td><td>12&#x27;-6&quot; x 10&#x27;-9&quot;</td><td>134</td><td>12.5</td></tr><tr><td>TOILET</td><td>8&#x27;-0&quot; x 4&#x27;-1&quot;</td><td>33</td><td>3.0</td></tr><tr><td>STAIR</td><td>12&#x27;-6&quot; x 6&#x27;-0&quot;</td><td>75</td><td>7.0</td></tr><tr><td>BACK PASSAGE / WASH</td><td>18&#x27;-0&quot; x 4&#x27;-10&quot;</td><td>86</td><td>8.0</td></tr></table>
+    <table class="rooms"><caption>First floor</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>HALL + DINING</td><td>10&#x27;-6&quot; x 22&#x27;-10&quot;</td><td>239</td><td>22.2</td></tr><tr><td>BALCONY</td><td>10&#x27;-6&quot; x 5&#x27;-9&quot;</td><td>60</td><td>5.6</td></tr><tr><td>BEDROOM 2 future kitchen</td><td>12&#x27;-6&quot; x 7&#x27;-5&quot;</td><td>93</td><td>8.6</td></tr><tr><td>LOBBY</td><td>4&#x27;-1&quot; x 4&#x27;-0&quot;</td><td>16</td><td>1.5</td></tr><tr><td>BATH common</td><td>8&#x27;-0&quot; x 4&#x27;-0&quot;</td><td>32</td><td>3.0</td></tr><tr><td>BEDROOM 1</td><td>12&#x27;-6&quot; x 10&#x27;-9&quot;</td><td>134</td><td>12.5</td></tr><tr><td>STAIR</td><td>2&#x27;-9&quot; x 6&#x27;-0&quot;</td><td>16</td><td>1.5</td></tr></table>
+    <table class="rooms"><caption>Second floor</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>WASH AREA open</td><td>10&#x27;-10&quot; x 2&#x27;-7&quot;</td><td>28</td><td>2.6</td></tr><tr><td>HALL + DINING</td><td>10&#x27;-6&quot; x 19&#x27;-10&quot;</td><td>208</td><td>19.3</td></tr><tr><td>BALCONY</td><td>10&#x27;-6&quot; x 5&#x27;-9&quot;</td><td>60</td><td>5.6</td></tr><tr><td>KITCHEN</td><td>12&#x27;-6&quot; x 7&#x27;-5&quot;</td><td>93</td><td>8.6</td></tr><tr><td>LOBBY</td><td>4&#x27;-1&quot; x 4&#x27;-0&quot;</td><td>16</td><td>1.5</td></tr><tr><td>BATH common</td><td>8&#x27;-0&quot; x 4&#x27;-0&quot;</td><td>32</td><td>3.0</td></tr><tr><td>BEDROOM</td><td>12&#x27;-6&quot; x 10&#x27;-9&quot;</td><td>134</td><td>12.5</td></tr><tr><td>STAIR</td><td>2&#x27;-9&quot; x 6&#x27;-0&quot;</td><td>16</td><td>1.5</td></tr></table>
+    <table class="rooms"><caption>Terrace</caption><tr><th>Room</th><th>Clear size (W x D)</th><th>sq ft</th><th>m&sup2;</th></tr><tr><td>OPEN TERRACE</td><td>max 24&#x27;-1&quot; x 30&#x27;-1&quot;</td><td>635</td><td>59.0</td></tr><tr><td>STAIR HEAD tank above</td><td>2&#x27;-9&quot; x 6&#x27;-0&quot;</td><td>16</td><td>1.5</td></tr></table>
   </div>
 
   <h2>Exterior</h2>
   <p class="hint" style="padding:0 0 8px">Rendered in Blender (Cycles) from the same model: light stone cladding on the stair tower, teak fins and gate, real glass, LED lines, afternoon sun from the south-west. Tap a picture to open it full size.</p>
   <div class="plans">
-    <figure><a href="blender/Rajesh_WestRoad_G+1_front.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_front.jpg" alt="Front view from West Road" loading="lazy"></a><figcaption>Front, from West Road</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_corner.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_corner.jpg" alt="Corner view" loading="lazy"></a><figcaption>Corner view</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_entrance.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_entrance.jpg" alt="Parking and entrance" loading="lazy"></a><figcaption>Parking and entrance</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_dusk.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_dusk.jpg" alt="Dusk view with the lights on" loading="lazy"></a><figcaption>Dusk, lights on</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_front.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_front.jpg" alt="Front view from West Road" loading="lazy"></a><figcaption>Front, from West Road</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_corner.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_corner.jpg" alt="Corner view" loading="lazy"></a><figcaption>Corner view</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_entrance.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_entrance.jpg" alt="Parking and entrance" loading="lazy"></a><figcaption>Parking and entrance</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_dusk.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_dusk.jpg" alt="Dusk view with the lights on" loading="lazy"></a><figcaption>Dusk, lights on</figcaption></figure>
   </div>
 
   <h2>Interiors</h2>
   <p class="hint" style="padding:0 0 8px">Each room seen from a corner, daylight through the windows and the room lights on.</p>
   <div class="plans">
-    <figure><a href="blender/Rajesh_WestRoad_G+1_gf_living.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_gf_living.jpg" alt="Ground floor living room" loading="lazy"></a><figcaption>Ground floor living</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_gf_kitchen.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_gf_kitchen.jpg" alt="Ground floor kitchen" loading="lazy"></a><figcaption>Ground floor kitchen</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_gf_bedroom.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_gf_bedroom.jpg" alt="Ground floor bedroom" loading="lazy"></a><figcaption>Ground floor bedroom</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_ff_hall.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_ff_hall.jpg" alt="First floor hall" loading="lazy"></a><figcaption>First floor hall</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_ff_kitchen.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_ff_kitchen.jpg" alt="First floor kitchen" loading="lazy"></a><figcaption>First floor kitchen</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_ff_bedroom.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_ff_bedroom.jpg" alt="First floor bedroom" loading="lazy"></a><figcaption>First floor bedroom</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_ff_bath.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_ff_bath.jpg" alt="First floor common bath" loading="lazy"></a><figcaption>Common bath</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_tr_bedroom.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_tr_bedroom.jpg" alt="Terrace bedroom" loading="lazy"></a><figcaption>Terrace bedroom 1</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_gf_kitchen.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_gf_kitchen.jpg" alt="Ground floor kitchen" loading="lazy"></a><figcaption>Ground floor kitchen</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_gf_bedroom.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_gf_bedroom.jpg" alt="Ground floor bedroom (mother)" loading="lazy"></a><figcaption>Ground floor bedroom (mother)</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_ff_hall.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_ff_hall.jpg" alt="First floor hall, TV wall" loading="lazy"></a><figcaption>First floor hall, TV wall</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_ff_dining.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_ff_dining.jpg" alt="First floor hall from the dining end" loading="lazy"></a><figcaption>First floor hall from the dining end</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_ff_bedroom1.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_ff_bedroom1.jpg" alt="First floor bedroom 1" loading="lazy"></a><figcaption>First floor bedroom 1</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_ff_bedroom2.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_ff_bedroom2.jpg" alt="First floor bedroom 2 (future kitchen)" loading="lazy"></a><figcaption>First floor bedroom 2 (future kitchen)</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_ff_bath.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_ff_bath.jpg" alt="First floor common bath" loading="lazy"></a><figcaption>First floor common bath</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_sf_hall.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_sf_hall.jpg" alt="Second floor hall" loading="lazy"></a><figcaption>Second floor hall</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_sf_kitchen.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_sf_kitchen.jpg" alt="Second floor kitchen" loading="lazy"></a><figcaption>Second floor kitchen</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_sf_bedroom.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_sf_bedroom.jpg" alt="Second floor bedroom" loading="lazy"></a><figcaption>Second floor bedroom</figcaption></figure>
   </div>
 
   <h2>3D floor plans</h2>
   <p class="hint" style="padding:0 0 8px">Each floor with the floors above and the ceilings cut away. North is left, West Road is at the bottom.</p>
   <div class="plans">
-    <figure><a href="blender/Rajesh_WestRoad_G+1_plan_gf.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_plan_gf.jpg" alt="3D ground floor plan" loading="lazy"></a><figcaption>Ground floor</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_plan_ff.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_plan_ff.jpg" alt="3D first floor plan" loading="lazy"></a><figcaption>First floor</figcaption></figure>
-    <figure><a href="blender/Rajesh_WestRoad_G+1_plan_tr.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+1_plan_tr.jpg" alt="3D terrace plan" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_plan_gf.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_plan_gf.jpg" alt="3D ground floor plan" loading="lazy"></a><figcaption>Ground floor</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_plan_ff.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_plan_ff.jpg" alt="3D first floor plan" loading="lazy"></a><figcaption>First floor</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_plan_sf.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_plan_sf.jpg" alt="3D second floor plan" loading="lazy"></a><figcaption>Second floor</figcaption></figure>
+    <figure><a href="blender/Rajesh_WestRoad_G+2_plan_tr.jpg" target="_blank"><img src="blender/Rajesh_WestRoad_G+2_plan_tr.jpg" alt="3D terrace plan" loading="lazy"></a><figcaption>Terrace</figcaption></figure>
   </div>
 </section>
 
@@ -283,7 +280,7 @@
     const loader = new GLTFLoader().setDRACOLoader(draco);
     const label = document.getElementById("b3d-label");
     let levels = {}, floorY = {}, centre = new THREE.Vector3(), radius = 10, current = 9;
-    loader.load("blender/Rajesh_WestRoad_G+1.glb?v=" + (window.VERSION || ""), gltf => {
+    loader.load("blender/Rajesh_WestRoad_G+2.glb?v=" + (window.VERSION || ""), gltf => {
       const root = gltf.scene; scene.add(root);
       const box = new THREE.Box3();
       root.traverse(o => {
@@ -317,7 +314,7 @@
     }
     // ---- virtual visit: eye 1.6 m above the floor, walk and turn, drag to look (no collisions, as in Sweet Home 3D) ----
     const FT = 0.3048, F2F = 3.2004, EYE = 1.6;
-    const STARTS = { 0: [1.9, 24.5], 1: [5.3, 18.0], 2: [7.5, 22.0] };   // plan feet: GF walkway by the car, FF hall at the main door, terrace
+    const STARTS = { 0: [5.5, 12.0], 1: [5.3, 18.0], 2: [5.3, 18.0], 3: [7.5, 12.0] };   // plan feet: GF open parking behind the car, FF and SF hall at the main door, terrace
     let walking = false, yaw = 0, pitch = 0, walkFloor = 0;
     const keys = {};
     function walkTo(f) {
@@ -398,7 +395,7 @@
 
 <script>
   var loaded = {}, viewers = {};
-  var VERSION = "20261015b";
+  var VERSION = "20261125a";
   var homes = { rental: "Rajesh_WestRoad_G+1.sh3d", open: "Rajesh_WestRoad_G+1_open_terrace.sh3d", duplex: "Rajesh_WestRoad_Duplex.sh3d" };
 
   function fitCanvas(id) {
@@ -477,7 +474,7 @@
   // routing: #g1, #open-terrace, #duplex, #blender (stub pages in g1/, open-terrace/, duplex/, blender/ redirect here)
   var ROUTES = { "g1": "rental", "open-terrace": "open", "duplex": "duplex", "blender": "blender" };
   function go(key) { location.hash = Object.keys(ROUTES).filter(function (r) { return ROUTES[r] === key; })[0]; }
-  function route() { show(ROUTES[location.hash.slice(1)] || "rental"); }
+  function route() { show(ROUTES[location.hash.slice(1)] || "blender"); }
   window.addEventListener("hashchange", route);
   route();
 </script>
