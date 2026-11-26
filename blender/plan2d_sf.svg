@@ -41,7 +41,6 @@
 <polygon points="299.9,119.1 299.9,161.4 242.6,161.4 242.6,119.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="323.1,595.3 140.2,595.3 140.2,590.3 323.1,590.3" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="29.5,251.5 29.5,114.3 34.5,114.3 34.5,251.5" fill="none" stroke="#d3dae0" stroke-width="1"/>
-<polygon points="29.5,495.3 29.5,358.1 34.5,358.1 34.5,495.3" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="155.4,4.1 307.9,4.1 307.9,9.1 155.4,9.1" fill="none" stroke="#d3dae0" stroke-width="1"/>
 <polygon points="345.5,243.8 345.5,167.6 350.5,167.6 350.5,243.8" fill="#eef1f4" stroke="#7d8a96" stroke-width="1"/>
 <text x="348.0" y="209.7" font-size="11" font-weight="600" fill="#34495e" text-anchor="middle" transform="rotate(-90 348.0 205.7)">CURTAIN</text>
@@ -143,11 +142,6 @@
 <line x1="11.4" y1="137.2" x2="11.4" y2="228.6" stroke="#2f7fb5" stroke-width="1.6"/>
 <line x1="-4.1" y1="137.2" x2="-4.1" y2="228.6" stroke="#2f7fb5" stroke-width="1.6"/>
 <text x="41.0" y="182.9" font-size="11" fill="#555" text-anchor="middle" transform="rotate(90 41.0 182.9)">3'-0"</text>
-<polygon points="28.0,381.0 28.0,472.4 -5.1,472.4 -5.1,381.0" fill="#fff"/>
-<line x1="27.0" y1="381.0" x2="27.0" y2="472.4" stroke="#2f7fb5" stroke-width="1.6"/>
-<line x1="11.4" y1="381.0" x2="11.4" y2="472.4" stroke="#2f7fb5" stroke-width="1.6"/>
-<line x1="-4.1" y1="381.0" x2="-4.1" y2="472.4" stroke="#2f7fb5" stroke-width="1.6"/>
-<text x="41.0" y="426.7" font-size="11" fill="#555" text-anchor="middle" transform="rotate(90 41.0 426.7)">3'-0"</text>
 <polygon points="396.2,602.7 518.2,602.7 518.2,620.3 396.2,620.3" fill="#fff"/>
 <line x1="396.2" y1="603.7" x2="518.2" y2="603.7" stroke="#2f7fb5" stroke-width="1.6"/>
 <line x1="396.2" y1="611.5" x2="518.2" y2="611.5" stroke="#2f7fb5" stroke-width="1.6"/>
